@@ -1,0 +1,49 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #555;
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background-color: #007BFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
+
+.buttons a {
+  display: inline-block;
+  margin: 15px;  /* Distância entre os botões */
+  padding: 20px 40px;  /* Aumenta o tamanho do botão */
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px; /* Bordas mais arredondadas */
+  font-size: 1.5em; /* Tamanho de fonte maior */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Sombras para dar profundidade */
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.buttons a:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);  /* Aumenta o tamanho do botão quando passa o mouse */
+}
+
