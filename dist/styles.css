@@ -146,6 +146,31 @@ html, body {
   max-width: 180px; /* Limite máximo de largura */
 }
 
+/* Estilo do botão Home/Logo */
+.logo-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo-image {
+  height: 50px; /* Ajuste conforme necessário */
+  width: auto;
+  max-width: 180px;
+  transition: all 0.3s ease;
+}
+
+.logo-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.logo-button:hover .logo-image {
+  filter: brightness(1.1);
+}
+
 /* BARRA DE TITULO */
 .title-bar {
   top: 60px; /* Alinhado com a toolbar */
