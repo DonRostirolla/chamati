@@ -349,3 +349,77 @@ html, body {
     font-size: 1em;
   }
 }
+
+/* Substitua as regras existentes do .form-wrapper por estas: */
+.form-wrapper {
+  max-width: 1000px; /* Aumentei de 800px */
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 30px; /* Aumentei o padding */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.notion-form {
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: none;
+  min-height: 700px; /* Altura mínima aumentada */
+  width: 100%;
+}
+
+/* Ajuste para telas grandes */
+@media (min-width: 1200px) {
+  .form-wrapper {
+    padding: 40px;
+  }
+  
+  .notion-form {
+    min-height: 800px;
+  }
+}
+
+/* Ajuste para o container principal */
+.contact-container {
+  margin-top: 80px;
+  padding: 40px 3%; /* Reduzi um pouco as laterais */
+  min-height: calc(100vh - 80px);
+  background-color: #007b7f;
+}
+.contact-info-wrapper {
+  max-width: 1000px;
+  margin: 30px auto 0;
+  padding: 20px;
+}
+
+.contact-info {
+  background: rgba(134, 206, 203, 0.2);
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+}
+
+.contact-info h3 {
+  color: #e12885;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-info li {
+  margin-bottom: 0;
+  color: white;
+  font-size: 1.1em;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 6px;
+}
