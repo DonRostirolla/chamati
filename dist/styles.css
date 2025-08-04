@@ -84,7 +84,7 @@ html, body {
 
 .toolbar-buttons {
   display: flex;
-  gap: 5px; 
+  gap: 5px; /* espaçamento entre os botoes */
 }
 
 .toolbar-buttons a {
