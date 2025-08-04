@@ -84,7 +84,7 @@ html, body {
 
 .toolbar-buttons {
   display: flex;
-  gap: 15px; 
+  gap: 5px; 
 }
 
 .toolbar-buttons a {
@@ -198,7 +198,7 @@ html, body {
 @media (max-width: 768px) {
   .toolbar {
     height: auto; /* Altura automática */
-    padding: 15px; /* Espaço uniforme */
+    padding: 10px; /* Espaço uniforme */
     flex-wrap: wrap; /* Permite quebra de linha */
   }
   
