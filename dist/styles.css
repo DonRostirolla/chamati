@@ -12,6 +12,10 @@ html, body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  background: #007b7f;
+  background-color: #007b7f; 
+  position: relative;
 }
 
 .banner img {
@@ -20,6 +24,22 @@ html, body {
   object-fit: contain;
   display: block;
   margin: 0 auto;
+    background: linear-gradient(to bottom, 
+              #007b7f, 
+              #007b7f 20%, 
+              transparent 20%, 
+              transparent 80%, 
+              #007b7f 90%, 
+              #007b7f);
+    box-shadow: 0 0 50px 20px #007b7f inset;   
+    filter: blur(1px);
+    transform: scale(1.02); /* Covers the blurred edges */  
+    mask-image: linear-gradient(to bottom, 
+                black 80%, 
+                transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, 
+                black 80%, 
+                transparent 95%);       
 }
 
 .overlay-text {
