@@ -45,3 +45,26 @@ a:hover {
   transform: scale(1.1);  /* Aumenta o tamanho do botão quando passa o mouse */
 }
 
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  padding: 10px 20px;
+  background-color: #86cecb; /* Verde água */
+  color: #373b3e;             /* Cinza escuro */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 1.2em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-button:hover {
+  background-color: #137a7f; /* Verde petróleo */
+  color: white;
+  transform: scale(1.05);
+}
+
+
+
