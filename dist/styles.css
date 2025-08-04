@@ -1,70 +1,117 @@
-body {
+/* style.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #007b7f;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  text-align: center;
-  padding: 20px;
+  overflow: hidden;
 }
 
-h1 {
-  color: #333;
+.banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
-p {
-  color: #555;
-  font-size: 1.2em;
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
-a {
-  text-decoration: none;
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
-  background-color: #007BFF;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1.1em;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-a:hover {
-  background-color: #0056b3;
+.buttons {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
 }
 
 .buttons a {
   display: inline-block;
-  margin: 15px;  /* Distância entre os botões */
-  padding: 20px 40px;  /* Aumenta o tamanho do botão */
-  background-color: #007BFF;
+  padding: 15px 30px;
+  background-color: #e12885;
   color: white;
   text-decoration: none;
-  border-radius: 8px; /* Bordas mais arredondadas */
-  font-size: 1.5em; /* Tamanho de fonte maior */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Sombras para dar profundidade */
+  border-radius: 8px;
+  font-size: 1.2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .buttons a:hover {
   background-color: #0056b3;
-  transform: scale(1.1);  /* Aumenta o tamanho do botão quando passa o mouse */
+  transform: scale(1.05);
 }
 
 .home-button {
+  /* Remove background color */
+  background-color: transparent;
+  
+  /* Add border for visibility */
+  border: 2px solid #86cecb;
+
+  /*background: linear-gradient(135deg, rgba(134, 206, 203, 0.3), rgba(19, 122, 127, 0.3)); */
+    background: rgba(134, 206, 203, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(134, 206, 203, 0.3);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  
+  /* Keep other properties */
   position: absolute;
   top: 20px;
   left: 30px;
   padding: 10px 20px;
-  background-color: #86cecb; /* Verde água */
-  color: #373b3e;             /* Cinza escuro */
+  color: #86cecb; /* Text color matching border */
   text-decoration: none;
   font-weight: bold;
   border-radius: 6px;
   font-size: 1.2em;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .home-button:hover {
-  background-color: #137a7f; /* Verde petróleo */
+  background-color: #137a7f;
+
+    background: linear-gradient(135deg, rgba(134, 206, 203, 0.6), rgba(19, 122, 127, 0.6));
+
   color: white;
   transform: scale(1.05);
 }
+.title-bar {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #86cecb, #e12885, #86cecb);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
 
-
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 
