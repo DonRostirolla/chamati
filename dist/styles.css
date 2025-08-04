@@ -169,3 +169,17 @@ html, body {
   }
 }
 
+/* MOBILE */ 
+@media (max-width: 768px) {
+  .toolbar {
+    height: auto; /* Altura automática */
+    padding: 15px; /* Espaço uniforme */
+    flex-wrap: wrap; /* Permite quebra de linha */
+  }
+  
+  .toolbar-buttons {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
