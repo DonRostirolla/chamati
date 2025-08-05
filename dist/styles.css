@@ -109,7 +109,7 @@ html, body {
 .toolbar-buttons a {
   display: inline-flex;
   align-items: center;
-  padding: 8px 16px;        /* Reduz o tamanho interno */
+  padding: 8px 10px;        /* Reduz o tamanho interno */
   color: var(--text-light);
   text-decoration: none;   /* Remove sublinhado se for um link */
   border-radius: 4px;      /* Bordas levemente arredondadas */
