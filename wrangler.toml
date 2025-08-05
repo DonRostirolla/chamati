@@ -1,0 +1,8 @@
+name = "chamati"
+compatibility_date = "2025-08-01"
+
+[build]
+command = ""
+
+[site]
+bucket = "./dist"
