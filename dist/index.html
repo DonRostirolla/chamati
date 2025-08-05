@@ -10,6 +10,7 @@
   
   <!-- Link para o arquivo CSS de estilos -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
   <!-- Toolbar no topo da página -->
@@ -23,12 +24,11 @@
     <nav class="toolbar-buttons">
       <!-- Botão do WhatsApp -->
       <a href="https://wa.me/5545999235688" target="_blank">
-        <img src="assets/whatsapp.svg" alt="WhatsApp" class="toolbar-icon">
-        WhatsApp
+        <i class="bi bi-whatsapp"></i> WhatsApp
       </a>
       
       <!-- Botão do Catálogo -->
-      <a href="https://chamati.net/catalogo">
+      <a href="https://chamati.net/servicos">
         <img src="assets/configuracoes.svg" alt="Catálogo" class="toolbar-icon">
         Catálogo
       </a>
@@ -39,8 +39,23 @@
         Orçamento
       </a>
     </nav>
+        <div class="language-switcher">
+      <button class="language-button">
+        <img src="assets/brazil-flag.svg" alt="Português">
+        PT
+      </button>
+      <div class="language-options">
+        <a href="#" class="language-option" data-lang="pt">
+          <img src="assets/brazil-flag.svg" alt="Português">
+          Português
+        </a>
+        <a href="#" class="language-option" data-lang="en">
+          <img src="assets/usa-flag.svg" alt="English">
+          English
+        </a>
+      </div>
+    </div>
   </div>
-
   <!-- Conteúdo principal (banner) -->
   <div class="banner">
     <!-- Logo principal -->

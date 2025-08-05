@@ -147,7 +147,7 @@ a[href*="whatsapp"]::before {
   background-image: url('data:image/svg+xml;utf8,<svg...></svg>');
 }
 
-a[href*="catalogo"]::before {
+a[href*="servicos"]::before {
   background-image: url('data:image/svg+xml;utf8,<svg...></svg>');
 }
 
@@ -443,5 +443,89 @@ a[href*="mailto"]::before {
   
   .contact-info li {
     font-size: 1em;
+  }
+}
+
+/* LINGUAGENS - Language Switcher Styles */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.language-button {
+  background: rgba(134, 206, 203, 0.7);
+  border: 1px solid rgba(225, 40, 133, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.language-button:hover {
+  background: rgba(225, 40, 133, 0.7);
+}
+
+.language-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.language-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 123, 127, 0.95);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: none;
+  min-width: 120px;
+  z-index: 1001;
+}
+
+.language-switcher:hover .language-options {
+  display: block;
+}
+
+.language-option {
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.language-option:hover {
+  background: rgba(225, 40, 133, 0.7);
+}
+
+.language-option img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .language-options {
+    width: 100%;
+  }
+  
+  .language-button {
+    width: 100%;
+    justify-content: center;
   }
 }
