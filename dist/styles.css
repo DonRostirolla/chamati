@@ -114,6 +114,14 @@ img {
   box-shadow: var(--shadow-lg);
   z-index: 1000;
 }
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .toolbar-nav {
   height: 100%;
@@ -124,6 +132,25 @@ img {
   max-width: 1440px;
   margin: 0 auto;
 }
+.toolbar-left,
+.toolbar-center,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+}
+/* Botões da toolbar */
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.toolbar-button i {
+  margin-right: 0.3rem;
+}
 
 .toolbar-section {
   display: flex;
@@ -133,7 +160,8 @@ img {
 
 /* Logo */
 .logo-link {
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease;*/
+  display: block;
 }
 
 .logo-link:hover {
@@ -312,6 +340,11 @@ img {
 }
 
 @media (max-width: 768px) {
+  .toolbar-container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
   .toolbar-nav {
     flex-wrap: wrap;
     padding: 0.5rem 1rem;
@@ -325,9 +358,29 @@ img {
   }
   
   .toolbar-left {
-    order: 2;
+    width: 100%;
+    justify-content: space-around;
+    margin: 0.5rem 0;
+  }
+    .toolbar-button {
+    flex-direction: column;
+    margin: 0;
+    padding: 0.5rem;
+  }
+    .toolbar-button i {
+    margin-right: 0;
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
   }
   
+  .toolbar-button span {
+    font-size: 0.8rem;
+  }
+  
+  .toolbar-right {
+    margin-top: 0.5rem;
+  }
+}
   .toolbar-center {
     order: 1;
   }
