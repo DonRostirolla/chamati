@@ -109,15 +109,19 @@ html, body {
 .toolbar-buttons a {
   display: inline-flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: 8px 16px;        /* Reduz o tamanho interno */
   color: var(--text-light);
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.95rem;
+  text-decoration: none;   /* Remove sublinhado se for um link */
+  border-radius: 4px;      /* Bordas levemente arredondadas */
+  font-size: 14px;         /* Tamanho de fonte menor */
   font-weight: 600;
-  transition: all 0.3s ease;
-  background-color: rgba(134, 206, 203, 0.7);
-  border: 1px solid rgba(225, 40, 133, 0.3);
+  transition: all 0.3s;    /* Efeito suave ao passar o mouse */
+  color: #333;             /* Cor do texto escura */
+  background-color: #f0f0f0; /* Cor de fundo neutra */
+  border: 1px solid #ccc;  /* Borda sutil */
+  cursor: pointer;         /* Mostra que é clicável */
+  display: inline-block;   /* Melhor controle de layout */
+  margin: 2px; 
 }
 
 .toolbar-buttons a:hover {
