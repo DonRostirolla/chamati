@@ -125,7 +125,8 @@ html, body {
 }
 
 .toolbar-buttons a:hover {
-  background-color: rgba(225, 40, 133, 0.7);
+  background-color: #e0e0e0; /* Cor mais escura ao passar o mouse */
+  border-color: #aaa;      /* Borda mais visível */
   transform: translateY(-2px);
 }
 
