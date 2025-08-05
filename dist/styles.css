@@ -355,3 +355,75 @@ img {
 .main-content {
   animation: fadeIn 0.8s ease-out forwards;
 }
+/* ===== TOOLBAR MOBILE ===== */
+@media (max-width: 768px) {
+  .toolbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .toolbar-section {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+  }
+
+  .toolbar-left {
+    order: 2;
+    justify-content: space-around; /* Distribui os botões igualmente */
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .toolbar-center {
+    order: 1;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+
+  .toolbar-right {
+    order: 3;
+    justify-content: flex-end;
+  }
+
+  .nav-button {
+    flex: 1; /* Faz os botões ocuparem espaço igual */
+    justify-content: center;
+    padding: 0.75rem 0.5rem;
+    min-width: auto;
+  }
+
+  .nav-button span {
+    display: none; /* Esconde o texto em mobile */
+  }
+
+  .nav-button .bi {
+    font-size: 1.5rem; /* Ícones maiores para mobile */
+    margin: 0;
+  }
+
+  .language-button span {
+    display: none; /* Esconde o texto do idioma */
+  }
+
+  .logo-img {
+    height: 2rem; /* Logo um pouco menor em mobile */
+  }
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media (max-width: 480px) {
+  .toolbar-left {
+    gap: 0.25rem;
+  }
+
+  .nav-button {
+    padding: 0.5rem;
+  }
+
+  .language-button {
+    padding: 0.5rem;
+  }
+}
