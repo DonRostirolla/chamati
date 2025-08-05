@@ -63,9 +63,12 @@ html, body {
 }
 
 .toolbar-left {
+  justify-self: start;
   display: flex;
-  align-items: center;
-  gap: 20px;
+}
+
+.toolbar-center {
+  justify-self: center;
 }
 
 /* Logo */
@@ -73,7 +76,6 @@ html, body {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 15px;
   transition: transform 0.3s ease;
 }
 
@@ -97,6 +99,12 @@ html, body {
   display: flex;
   gap: 10px;
 }
+/* Grupo à direita */
+.toolbar-right {
+  justify-self: end;
+  display: flex;
+}
+
 
 .toolbar-buttons a {
   display: inline-flex;
