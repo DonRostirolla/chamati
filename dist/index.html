@@ -1,55 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
+  <!-- Meta tags otimizadas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chama TI - Soluções em Tecnologia da Informação">
   <title>Chama TI - Suporte Especializado em TI</title>
+  
+  <!-- Pré-conexão para CDNs -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   
-  <!-- Favicon -->
+  <!-- Favicon moderno -->
   <link rel="icon" href="assets/TIcon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/TIcon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#007b7f">
 </head>
 
 <body>
-  <!-- Barra de navegação simplificada -->
+  <!-- Barra de navegação superior -->
   <header class="toolbar">
-    <div class="toolbar-container">
-      <!-- Botões à esquerda -->
-      <div class="toolbar-left">
-        <a href="https://wa.me/5545999235688" target="_blank" class="toolbar-button">
+    <!-- Navegação principal -->
+     <nav class="toolbar-nav">
+      <div class="toolbar-section toolbar-left">
+        <a href="https://wa.me/5545999235688" target="_blank" class="nav-button" aria-label="WhatsApp">
           <i class="bi bi-whatsapp"></i>
           <span>WhatsApp</span>
         </a>
-        <a href="/servicos" class="toolbar-button">
+        <a href="https://chamati.net/servicos" class="nav-button" aria-label="Serviços">
           <i class="bi bi-layout-wtf"></i>
           <span>Serviços</span>
         </a>
-        <a href="/contato" class="toolbar-button">
+        <a href="https://chamati.net/contato" class="nav-button" aria-label="Contato">
           <i class="bi bi-people"></i>
           <span>Contato</span>
         </a>
       </div>
       
-      <!-- Logo central -->
-      <div class="toolbar-center">
-        <a href="/" class="logo-link">
-          <img src="assets/TIcon.svg" alt="Chama TI" class="logo-img">
+      <div class="toolbar-section toolbar-center">
+        <a href="https://chamati.net" class="logo-link" aria-label="Página inicial">
+          <img src="assets/TIcon.svg" alt="Chama TI" width="180" height="40" class="logo-img">
         </a>
       </div>
       
-      <!-- Idioma à direita -->
-      <div class="toolbar-right">
+      <div class="toolbar-section toolbar-right">
         <div class="language-selector">
-          <button class="language-button">
+          <button class="language-button" aria-expanded="false" aria-label="Seletor de idiomas">
             <i class="bi bi-globe"></i>
             <span>Português</span>
+            <i class="bi bi-chevron-down"></i>
           </button>
+          <ul class="language-menu">
+            <li><a href="#" class="active">Português</a></li>
+            <li><a href="#">English</a></li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
     
     <!-- Barra decorativa -->
     <div class="title-bar"></div>
@@ -58,20 +69,39 @@
   <!-- Conteúdo principal -->
   <main class="main-content">
     <div class="hero-banner">
-      <img src="assets/TIcon.svg" alt="Chama TI" class="hero-image">
+      <img src="assets/TIcon.svg" alt="Chama TI" width="400" height="400" loading="lazy">
     </div>
   </main>
 
-  <!-- Botão de ajuda -->
-  <a href="/contato" class="help-button">
-    <i class="bi bi-question-circle"></i>
-    <span>Ajuda</span>
+  <!-- Botão de ajuda flutuante -->
+  <a href="https://chamati.net/contato" class="help-button">
+    <i class="bi bi-question-circle-fill"></i>
+    <span>Precisa de ajuda?</span>
   </a>
 
-  <!-- Script simplificado -->
+  <!-- Scripts -->
   <script>
-    document.querySelector('.language-button').addEventListener('click', function() {
-      // Lógica simples para menu de idiomas
+    // Controle do menu de idiomas
+    document.querySelector('.language-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      const menu = this.nextElementSibling;
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      this.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('visible');
+      this.querySelector('.bi-chevron-down').classList.toggle('rotate');
+    });
+    
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.language-selector')) {
+        const menu = document.querySelector('.language-menu');
+        if (menu.classList.contains('visible')) {
+          menu.classList.remove('visible');
+          document.querySelector('.language-button').setAttribute('aria-expanded', 'false');
+          document.querySelector('.bi-chevron-down').classList.remove('rotate');
+        }
+      }
     });
   </script>
 </body>
