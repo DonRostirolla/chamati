@@ -49,17 +49,24 @@
       </a>
     </nav>
     <!-- Language selector -->
-    <div class="language-picker">
-  <button class="lang-btn active" data-lang="pt">
-    <img src="assets/flags/brazil.svg" alt="Português">
-    <span>Português</span>
-  </button>
-  
-  <button class="lang-btn" data-lang="en">
-    <img src="assets/flags/usa.svg" alt="English">
-    <span>English</span>
-  </button>
-</div>
+      <div class="dropdown-language">
+    <button class="dropdown-toggle">
+      <img src="assets/flags/brazil.svg" alt="Idioma">
+      <span>Português</span>
+      <i class="dropdown-arrow">▼</i>
+    </button>
+    
+    <div class="dropdown-menu">
+      <a href="?lang=pt" class="active">
+        <img src="assets/flags/brazil.svg" alt="Português">
+        Português
+      </a>
+      <a href="?lang=en">
+        <img src="assets/flags/usa.svg" alt="English">
+        English
+      </a>
+    </div>
+  </div>
     </div>
   </div>
   <!-- Conteúdo principal (banner) -->
