@@ -1,45 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- 
+    Meta tags essenciais para SEO e configuração inicial
+    - charset: Define a codificação de caracteres como UTF-8
+    - viewport: Configuração responsiva para dispositivos móveis
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título da página (aparece na aba do navegador e resultados de busca) -->
   <title>Serviços - Chama TI</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="servicos.css">
+  
+  <!-- 
+    Folhas de estilo
+    - styles.css: Estilos globais e base do projeto
+    - servicos.css: Estilos específicos para esta página
+    Ordem é importante: primeiro o CSS base, depois os específicos
+  -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/servicos.css">
+  
+  <!-- Favicon para identidade visual -->
+  <link rel="icon" href="assets/TIcon.svg" type="image/svg+xml">
 </head>
-<body>
-  <div class="toolbar">
-    <!-- Sua toolbar existente -->
-  </div>
 
+<body>
+  <!-- 
+    Container para a toolbar (será preenchido via JavaScript)
+    - Posicionamento fixo no topo
+    - Z-index alto para garantir que fique sobre outros elementos
+  -->
+  <div id="navbar-container"></div>
+
+  <!-- 
+    Conteúdo principal da página
+    - services-container: Classe container para estilização
+  -->
   <main class="services-container">
+    <!-- Cabeçalho da seção de serviços -->
     <div class="services-header">
+      <!-- Título principal da página -->
       <h1>Nossos Serviços em TI</h1>
+      
+      <!-- Barra decorativa animada -->
       <div class="title-bar"></div>
     </div>
 
+    <!-- 
+      Seção de diferenciais
+      - section: Tag semântica para agrupamento de conteúdo relacionado
+    -->
     <section class="differentials-section">
       <h2>Por que escolher a Chama TI?</h2>
       
+      <!-- Grade de diferenciais em layout grid -->
       <div class="differentials-grid">
+        <!-- Card de diferencial 1 -->
         <div class="differential-card">
-          <span class="differential-number">1</span>
-          <h3>Expertise Técnica</h3>
-          <p>Profissionais certificados em infraestrutura crítica e segurança</p>
+          <span class="differential-number">1</span> <!-- Número decorativo -->
+          <h3>Expertise Técnica</h3> <!-- Título do diferencial -->
+          <p>Profissionais certificados em infraestrutura crítica e segurança</p> <!-- Descrição -->
         </div>
         
+        <!-- Card de diferencial 2 -->
         <div class="differential-card">
           <span class="differential-number">2</span>
           <h3>Suporte Especializado</h3>
           <p>Equipe técnica disponível para atendimento rápido</p>
         </div>
         
+        <!-- Card de diferencial 3 -->
         <div class="differential-card">
           <span class="differential-number">3</span>
           <h3>Monitoramento 24/7</h3>
           <p>Soluções proativas que antecipam problemas</p>
         </div>
         
+        <!-- Card de diferencial 4 -->
         <div class="differential-card">
           <span class="differential-number">4</span>
           <h3>Soluções Personalizadas</h3>
@@ -48,17 +86,20 @@
       </div>
     </section>
 
-    <!-- Grade de Serviços -->
+    <!-- 
+      Grade de Serviços
+      - services-grid: Layout responsivo em grid
+    -->
     <div class="services-grid">
-      <!-- Serviço em destaque -->
+      <!-- Serviço em destaque (com classe highlight-card) -->
       <div class="service-card highlight-card">
-        <div class="service-icon">🔍</div>
-        <h3>Auditoria de Infraestrutura</h3>
-        <p>Diagnóstico completo + relatório detalhado com plano de melhorias para sua infraestrutura de TI</p>
-        <span class="price">Sob Consulta</span>
+        <div class="service-icon">🔍</div> <!-- Ícone ilustrativo -->
+        <h3>Auditoria de Infraestrutura</h3> <!-- Nome do serviço -->
+        <p>Diagnóstico completo + relatório detalhado com plano de melhorias para sua infraestrutura de TI</p> <!-- Descrição -->
+        <span class="price">Sob Consulta</span> <!-- Preço/condição -->
       </div>
       
-      <!-- Infraestrutura -->
+      <!-- Card de serviço: Infraestrutura -->
       <div class="service-card">
         <div class="service-icon">🏗️</div>
         <h3>Infraestrutura do Zero</h3>
@@ -66,15 +107,15 @@
         <span class="price">Sob Consulta</span>
       </div>
       
-      <!-- Monitoramento -->
+      <!-- Card de serviço: Monitoramento -->
       <div class="service-card">
         <div class="service-icon">📊</div>
         <h3>Monitoramento 24/7</h3>
         <p>Dashboards em tempo real com Zabbix/Grafana e alertas automatizados para sua equipe</p>
-        <span class="price">A partir de R$ 499/mês</span>
+        <span class="price">A partir de R$ 499/mês</span> <!-- Preço específico -->
       </div>
       
-      <!-- Segurança -->
+      <!-- Card de serviço: Segurança -->
       <div class="service-card">
         <div class="service-icon">🛡️</div>
         <h3>Segurança de Rede</h3>
@@ -82,7 +123,7 @@
         <span class="price">Sob Consulta</span>
       </div>
 
-      <!-- Telefonia -->
+      <!-- Card de serviço: Telefonia -->
       <div class="service-card">
         <div class="service-icon">📞</div>
         <h3>Telefonia IP</h3>
@@ -90,7 +131,7 @@
         <span class="price">Sob Consulta</span>
       </div>
 
-      <!-- Treinamentos -->
+      <!-- Card de serviço: Treinamentos -->
       <div class="service-card">
         <div class="service-icon">🎓</div>
         <h3>Treinamentos</h3>
@@ -98,7 +139,7 @@
         <span class="price">Sob Consulta</span>
       </div>
 
-      <!-- WiFi -->
+      <!-- Card de serviço: WiFi -->
       <div class="service-card">
         <div class="service-icon">📶</div>
         <h3>WiFi Empresarial</h3>
@@ -106,7 +147,7 @@
         <span class="price">Sob Consulta</span>
       </div>
 
-      <!-- Câmeras -->
+      <!-- Card de serviço: Câmeras -->
       <div class="service-card">
         <div class="service-icon">📹</div>
         <h3>Sistemas de Câmeras</h3>
@@ -115,20 +156,31 @@
       </div>
     </div>
 
-    <!-- Chamada para Ação -->
+    <!-- 
+      Seção de Chamada para Ação (Call To Action)
+      - cta-section: Área para conversão e contato
+    -->
     <div class="cta-section">
       <h2>Precisa de uma solução personalizada?</h2>
       <p>Nossa equipe está pronta para entender suas necessidades e oferecer a melhor solução em TI</p>
+      
+      <!-- Botão de CTA principal -->
       <a href="https://wa.me/5545999235688" class="cta-button">
         <span>Fale com nosso especialista</span>
-        <span class="icon">💬</span>
+        <span class="icon">💬</span> <!-- Ícone decorativo -->
       </a>
     </div>
   </main>
-  <!-- NOVA SEÇÃO DE PÚBLICO-ALVO (aqui no final) -->
+
+  <!-- 
+    Seção de Público-Alvo
+    - target-audience: Informações sobre clientes ideais
+  -->
   <section class="target-audience">
     <h2>Nosso Público-Alvo</h2>
     <p>Empresas que buscam infraestrutura de TI confiável e segura</p>
+    
+    <!-- Cards de tipos de público -->
     <div class="audience-types">
       <div class="audience-card">
         <h3>Pequenas e Médias Empresas</h3>
@@ -140,13 +192,52 @@
       </div>
     </div>
   </section>
-</main>
-<div class="cta-container">
-  <a href="https://wa.me/5545999235688" class="cta-button">
-    Se encaixa no seu perfil? Fale conosco!
+
+  <!-- 
+    Botão de ajuda flutuante
+    - Posicionamento fixo na tela
+    - Acesso rápido à página de ajuda
+  -->
+  <a class="help-button" href="https://chamati.net/ajuda">
+    <i class="bi bi-question-circle"></i> <!-- Ícone do Bootstrap -->
+    <span>Ajuda</span> <!-- Texto visível -->
   </a>
-</div>
-  <!-- Botão de ajuda flutuante -->
-  <a class="help-button" href="https://chamati.net/ajuda">Ajuda</a>
+
+  <!-- 
+    Scripts JavaScript
+    - Colocados no final do body para melhor performance
+  -->
+  <script>
+    /**
+     * Carrega a toolbar de forma dinâmica
+     * - Fetch: Busca o conteúdo do arquivo toolbar.html
+     * - Manipulação DOM: Insere a toolbar no container
+     * - Ativa link ativo: Destaca o link correspondente à página atual
+     */
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('toolbar.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Falha ao carregar a toolbar');
+          }
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          
+          // Ativa o link ativo na toolbar
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-button').forEach(link => {
+            if (link.getAttribute('href').includes(currentPage)) {
+              link.classList.add('active');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Erro ao carregar toolbar:', error);
+          // Fallback: Exibe mensagem ou toolbar básica
+        });
+    });
+  </script>
 </body>
 </html>
