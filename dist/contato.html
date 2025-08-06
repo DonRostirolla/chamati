@@ -11,32 +11,53 @@
   <!-- Link para o arquivo CSS de estilos -->
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/contato.css">
-</head>
-<body>
-  <!-- Toolbar de navegação no topo -->
-  <div class="toolbar">
-    <!-- Logo que redireciona para a página inicial -->
-    <a href="https://chamati.net" class="logo-button">
-      <img src="/assets/TI.svg" alt="Home - Chama TI" class="logo-image">
-    </a>
+
+<style>
+    /* Estilo para o container da toolbar */
+    .toolbar-container {
+      width: 100%;
+      height: 90px; /* Ajuste conforme necessário */
+      border: none;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
     
-    <!-- Menu de navegação -->
-    <nav class="toolbar-buttons">
-      <!-- Link para WhatsApp -->
-      <a href="https://wa.me/5545999235688" target="_blank">WhatsApp</a>
-      
-      <!-- Link para Catálogo -->
-      <a href="servicos.html">Catálogo</a>
-      
-      <!-- Link ativo para Contato -->
-      <a href="contato.html" class="active">Contato</a>
-    </nav>
-  </div>
+    /* Espaço para o conteúdo abaixo da toolbar */
+    main {
+      padding-top: 20px;
+    }
+  </style>
+</head>
 
-  <!-- Barra de título decorativa animada -->
-  <div class="title-bar"></div>
+<body>
+  <!-- Importação da Toolbar via iframe -->
+  <iframe 
+    src="toolbar.html" 
+    class="toolbar-container"
+    scrolling="no"
+    frameborder="0"
+    title="Navegação Principal">
+  </iframe>
 
-  <!-- Conteúdo principal da página -->
+  <!-- Conteúdo Principal -->
+  <main class="contact-container">
+    <h1 class="contact-title">Fale Conosco</h1>
+    
+    <div class="contact-grid">
+      <!-- Formulário -->
+      <div class="form-wrapper">
+        <iframe 
+          src="https://operacoes.notion.site/ebd/24599592ccdf8066876fe24e458b5566" 
+          width="100%" 
+          height="800"
+          frameborder="0" 
+          allowfullscreen
+          class="notion-form">
+        </iframe>
+      </div>
+
+  <!-- CONTEUDO PRINCIPAL -->
   <main class="contact-container">
     <!-- Título da seção de contato -->
     <h1 class="contact-title">Fale Conosco</h1>
@@ -94,6 +115,9 @@
   </main>
 
   <!-- Botão de ajuda flutuante -->
-  <a class="help-button" href="https://chamati.net">Ajuda</a>
+  <a class="help-button" href="https://chamati.net/ajuda">
+    <i class="bi bi-question-circle"></i>
+    <span>Ajuda</span>
+  </a>
 </body>
 </html>
