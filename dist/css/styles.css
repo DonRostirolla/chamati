@@ -143,6 +143,18 @@ img {
   box-shadow: var(--shadow-lg);
   z-index: 1000;
 }
+/* Garante que a toolbar injetada tenha estilos */
+#navbar-container .toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* outros estilos da toolbar */
+}
+
+#navbar-container .nav-button.active {
+  background-color: var(--secondary);
+}
 
 .toolbar-nav {
   height: 100%;
