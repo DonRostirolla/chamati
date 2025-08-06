@@ -372,3 +372,52 @@
     font-size: 1.75rem;
   }
 }
+/* Seção Público-Alvo */
+.target-audience {
+  background: rgba(0, 98, 102, 0.2);
+  border-radius: 16px;
+  padding: 3rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.target-audience h2 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.target-audience > p {
+  color: var(--primary-light);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.audience-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.audience-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.audience-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.audience-card h3 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.audience-card p {
+  color: var(--gray-200);
+}
