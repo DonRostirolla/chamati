@@ -1,0 +1,171 @@
+/* contato.css - Estilos específicos para a página de contato */
+
+/* ===== ESTRUTURA PRINCIPAL ===== */
+.contact-container {
+  max-width: 1200px;
+  margin: 6rem auto 3rem;
+  padding: 0 2rem;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.contact-title {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--primary-light), 
+    var(--secondary), 
+    var(--primary-light));
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+  border-radius: 2px;
+}
+
+/* ===== LAYOUT DO FORMULÁRIO ===== */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .contact-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.form-wrapper {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.notion-form {
+  border-radius: 8px;
+  min-height: 600px;
+}
+
+/* ===== INFORMAÇÕES DE CONTATO ===== */
+.contact-info-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-info h2 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.contact-method:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-icon {
+  font-size: 1.8rem;
+  color: var(--primary-light);
+  min-width: 40px;
+  text-align: center;
+}
+
+.contact-details h3 {
+  color: var(--white);
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.contact-details p, 
+.contact-details a {
+  color: var(--gray-200);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-details a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* ===== BOTÃO FLUTUANTE ===== */
+.help-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.help-button:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(225, 40, 133, 0.3);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .contact-container {
+    margin-top: 5rem;
+    padding: 0 1.5rem;
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .form-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .notion-form {
+    min-height: 500px;
+  }
+  
+  .help-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
