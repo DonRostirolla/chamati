@@ -4,111 +4,71 @@
   <!-- Meta tags otimizadas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chama TI - Soluções em Tecnologia da Informação">
   <title>Chama TI - Suporte Especializado em TI</title>
-  
-  <!-- Pré-conexão para CDNs -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   
-  <!-- Favicon moderno -->
+  <!-- Favicon -->
   <link rel="icon" href="assets/TIcon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/TIcon.svg">
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#007b7f">
 </head>
 
 <body>
-  <!-- Barra de navegação superior -->
+  <!-- Barra de navegação -->
   <header class="toolbar">
-    <!-- Navegação principal -->
-     <nav class="toolbar-nav">
-      <div class="toolbar-section toolbar-left">
-        <a href="https://wa.me/5545999235688" target="_blank" class="nav-button" aria-label="WhatsApp">
+    <nav class="toolbar-nav">
+      <div class="toolbar-left">
+        <a href="https://wa.me/5545999235688" target="_blank" class="nav-button">
           <i class="bi bi-whatsapp"></i>
           <span>WhatsApp</span>
         </a>
-        <a href="https://chamati.net/servicos" class="nav-button" aria-label="Serviços">
+        <a href="/servicos" class="nav-button">
           <i class="bi bi-layout-wtf"></i>
           <span>Serviços</span>
         </a>
-        <a href="https://chamati.net/contato" class="nav-button" aria-label="Contato">
+        <a href="/contato" class="nav-button">
           <i class="bi bi-people"></i>
           <span>Contato</span>
         </a>
       </div>
       
-      <div class="toolbar-section toolbar-center">
-        <a href="https://chamati.net" class="logo-link" aria-label="Página inicial">
-          <img src="assets/TIcon.svg" alt="Chama TI" width="180" height="40" class="logo-img">
+      <div class="toolbar-center">
+        <a href="/" class="logo-link">
+          <img src="assets/TIcon.svg" alt="Chama TI" class="logo-img">
         </a>
       </div>
       
-      <div class="toolbar-section toolbar-right">
+      <div class="toolbar-right">
         <div class="language-selector">
-          <button class="language-button" aria-expanded="false" aria-label="Seletor de idiomas">
+          <button class="language-button">
             <i class="bi bi-globe"></i>
             <span>Português</span>
-            <i class="bi bi-chevron-down"></i>
           </button>
-          <ul class="language-menu">
-            <li><a href="#" class="active">Português</a></li>
-            <li><a href="#">English</a></li>
-          </ul>
         </div>
       </div>
     </nav>
     
-    <!-- Barra decorativa -->
     <div class="title-bar"></div>
   </header>
 
   <!-- Conteúdo principal -->
   <main class="main-content">
-    <div class="hero-container">
-      <div class="hero-image-container">
-        <img src="assets/TIcon.svg" alt="Chama TI" class="hero-image">
+    <div class="content-wrapper">
+      <div class="logo-section">
+        <img src="assets/TIcon.svg" alt="Chama TI" class="main-logo">
       </div>
-      <div class="hero-text">
+      <div class="text-section">
         <h1>Sobre</h1>
         <p>A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação. Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis e bem documentados — prontos para crescer junto com nossos clientes.</p>
       </div>
     </div>
   </main>
 
-  <!-- Botão de ajuda flutuante -->
-  <a href="https://chamati.net/contato" class="help-button">
-    <i class="bi bi-question-circle-fill"></i>
-    <span>Precisa de ajuda?</span>
+  <!-- Botão de ajuda -->
+  <a href="/contato" class="help-button">
+    <i class="bi bi-question-circle"></i>
+    <span>Ajuda</span>
   </a>
-
-  <!-- Scripts -->
-  <script>
-    // Controle do menu de idiomas
-    document.querySelector('.language-button').addEventListener('click', function(e) {
-      e.preventDefault();
-      const menu = this.nextElementSibling;
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      
-      this.setAttribute('aria-expanded', !isExpanded);
-      menu.classList.toggle('visible');
-      this.querySelector('.bi-chevron-down').classList.toggle('rotate');
-    });
-    
-    // Fechar menu ao clicar fora
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.language-selector')) {
-        const menu = document.querySelector('.language-menu');
-        if (menu.classList.contains('visible')) {
-          menu.classList.remove('visible');
-          document.querySelector('.language-button').setAttribute('aria-expanded', 'false');
-          document.querySelector('.bi-chevron-down').classList.remove('rotate');
-        }
-      }
-    });
-  </script>
 </body>
 </html>
