@@ -1,52 +1,27 @@
+<!-- toolbar.html -->
+<!-- APENAS o conteúdo da toolbar, sem <head> ou <body> -->
 <header class="toolbar">
   <nav class="toolbar-nav">
-    <div class="toolbar-section toolbar-left">
-      <a href="https://wa.me/5545999235688" target="_blank" class="nav-button">
-        <i class="bi bi-whatsapp"></i>
-        <span>WhatsApp</span>
-      </a>
-      <a href="servicos.html" class="nav-button">
-        <i class="bi bi-layout-wtf"></i>
-        <span>Serviços</span>
-      </a>
-      <a href="contato.html" class="nav-button">
-        <i class="bi bi-people"></i>
-        <span>Contato</span>
-      </a>
-    </div>
-    
-    <div class="toolbar-section toolbar-center">
-      <a href="index.html" class="logo-link">
-        <img src="assets/TIcon.svg" alt="Chama TI" width="180" height="40" class="logo-img">
-      </a>
-    </div>
-    
-    <div class="toolbar-section toolbar-right">
-      <div class="language-selector">
-        <button class="language-button" aria-expanded="false">
-          <i class="bi bi-globe"></i>
-          <span>Português</span>
-          <i class="bi bi-chevron-down"></i>
-        </button>
-        <ul class="language-menu">
-          <li><a href="#" class="active">Português</a></li>
-          <li><a href="#">English</a></li>
-        </ul>
-      </div>
-    </div>
+    <!-- ... seu código de toolbar ... -->
   </nav>
   <div class="title-bar"></div>
 </header>
 
 <script>
-  // Script ÚNICO para controle do menu
-  document.querySelector('.language-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    const menu = this.nextElementSibling;
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  // Adicione este script para garantir que o CSS seja aplicado
+  document.addEventListener('DOMContentLoaded', function() {
+    // Cria link para os estilos
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/styles.css';
+    document.head.appendChild(link);
     
-    this.setAttribute('aria-expanded', !isExpanded);
-    menu.classList.toggle('visible');
-    this.querySelector('.bi-chevron-down').classList.toggle('rotate');
+    // Script do menu de idiomas
+    document.querySelector('.language-button')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      const menu = this.nextElementSibling;
+      menu.classList.toggle('visible');
+      this.querySelector('.bi-chevron-down').classList.toggle('rotate');
+    });
   });
 </script>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Meta tags essenciais -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Título da página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato - Chama TI</title>
-  
-  <!-- Link para o arquivo CSS de estilos -->
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/contato.css">
+  <!-- Carrega TODOS os CSS necessários -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contato.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
+  <!-- Container vazio para a toolbar -->
+  <div id="navbar-container"></div>
+
+  <main class="contact-container">
   <!-- CONTEUDO PRINCIPAL -->
   <main class="contact-container">
     <!-- Título da seção de contato -->
@@ -70,6 +71,29 @@
     </div>
   </main>
 
+  <!-- Script de importação MELHORADO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('toolbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          
+          // Ativa link ativo
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-button').forEach(link => {
+            if (link.getAttribute('href').includes(currentPage)) {
+              link.classList.add('active');
+            }
+          });
+          
+          // Força recálculo de estilos
+          document.body.offsetHeight;
+        })
+        .catch(error => console.error('Erro ao carregar toolbar:', error));
+    });
+  </script>
+  
   <!-- Botão de ajuda flutuante -->
   <a class="help-button" href="https://chamati.net">Ajuda</a>
 </body>
