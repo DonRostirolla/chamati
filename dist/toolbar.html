@@ -1,70 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <style>
-    body { 
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      background: transparent;
-    }
-    .toolbar {
-      width: 100vw;
-    }
-  </style>
-</head>
-<body>
-  <!-- Sua Toolbar Completa -->
-  <header class="toolbar">
-    <nav class="toolbar-nav">
-      <div class="toolbar-section toolbar-left">
-        <a href="https://wa.me/5545999235688" target="_blank" class="nav-button">
-          <i class="bi bi-whatsapp"></i>
-          <span>WhatsApp</span>
-        </a>
-        <a href="servicos.html" class="nav-button">
-          <i class="bi bi-layout-wtf"></i>
-          <span>Serviços</span>
-        </a>
-        <a href="contato.html" class="nav-button">
-          <i class="bi bi-people"></i>
-          <span>Contato</span>
-        </a>
+<header class="toolbar">
+  <nav class="toolbar-nav">
+    <div class="toolbar-section toolbar-left">
+      <a href="https://wa.me/5545999235688" target="_blank" class="nav-button">
+        <i class="bi bi-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a href="servicos.html" class="nav-button">
+        <i class="bi bi-layout-wtf"></i>
+        <span>Serviços</span>
+      </a>
+      <a href="contato.html" class="nav-button">
+        <i class="bi bi-people"></i>
+        <span>Contato</span>
+      </a>
+    </div>
+    
+    <div class="toolbar-section toolbar-center">
+      <a href="index.html" class="logo-link">
+        <img src="assets/TIcon.svg" alt="Chama TI" width="180" height="40" class="logo-img">
+      </a>
+    </div>
+    
+    <div class="toolbar-section toolbar-right">
+      <div class="language-selector">
+        <button class="language-button" aria-expanded="false">
+          <i class="bi bi-globe"></i>
+          <span>Português</span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="language-menu">
+          <li><a href="#" class="active">Português</a></li>
+          <li><a href="#">English</a></li>
+        </ul>
       </div>
-      
-      <div class="toolbar-section toolbar-center">
-        <a href="index.html" class="logo-link">
-          <img src="assets/TIcon.svg" alt="Chama TI" width="180" height="40" class="logo-img">
-        </a>
-      </div>
-      
-      <div class="toolbar-section toolbar-right">
-        <div class="language-selector">
-          <button class="language-button" aria-expanded="false">
-            <i class="bi bi-globe"></i>
-            <span>Português</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <ul class="language-menu">
-            <li><a href="#" class="active">Português</a></li>
-            <li><a href="#">English</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="title-bar"></div>
-  </header>
+    </div>
+  </nav>
+  <div class="title-bar"></div>
+</header>
 
-  <script>
-    // Controle do menu de idiomas
-    document.querySelector('.language-button')?.addEventListener('click', function(e) {
-      e.preventDefault();
-      const menu = this.nextElementSibling;
-      menu.classList.toggle('visible');
-      this.querySelector('.bi-chevron-down').classList.toggle('rotate');
-    });
-  </script>
-</body>
-</html>
+<script>
+  // Script ÚNICO para controle do menu
+  document.querySelector('.language-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    const menu = this.nextElementSibling;
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    
+    this.setAttribute('aria-expanded', !isExpanded);
+    menu.classList.toggle('visible');
+    this.querySelector('.bi-chevron-down').classList.toggle('rotate');
+  });
+</script>

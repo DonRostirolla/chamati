@@ -13,14 +13,8 @@
 <link rel="stylesheet" href="css/contato.css">
 </head>
 <body>
-  <!-- Importação da Toolbar via iframe -->
-  <iframe 
-    src="toolbar.html" 
-    class="toolbar-container"
-    scrolling="no"
-    frameborder="0"
-    title="Navegação Principal">
-  </iframe>
+  <!-- Div para receber a toolbar -->
+  <div id="toolbar-container"></div>
 
   <!-- CONTEUDO PRINCIPAL -->
   <main class="contact-container">
@@ -80,6 +74,24 @@
   </main>
 
   <!-- Botão de ajuda flutuante -->
-  <a class="help-button" href="https://chamati.net">Ajuda</a>
+  <a class="help-button" href="https://chamati.net/contato">Ajuda</a>
+
+  <!-- Script de importação -->
+  <script>
+    // Carrega a toolbar
+    fetch('toolbar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('toolbar-container').innerHTML = html;
+        
+        // Ativa o link ativo
+        const currentPage = window.location.pathname.split('/').pop();
+        document.querySelectorAll('.nav-button').forEach(link => {
+          if (link.getAttribute('href').includes(currentPage)) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
 </body>
 </html>
