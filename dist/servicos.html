@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Meta tags essenciais -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Título da página (observação: corrigi "Chama TJ" para "Chama TI") -->
-  <title>Catálogo - Chama TI</title>
-  
-  <!-- Link para o arquivo CSS de estilos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços de TI - Chama TI</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="servicos.css">
 </head>
 <body>
   <!-- Toolbar consistente com as demais páginas -->
   <div class="toolbar">
-    <!-- Logo que redireciona para a página inicial -->
     <a href="https://chamati.net" class="logo-button">
       <img src="/assets/TI.svg" alt="Home - Chama TI" class="logo-image">
     </a>
     
-    <!-- Menu de navegação -->
     <nav class="toolbar-buttons">
-      <!-- Link para WhatsApp -->
       <a href="https://wa.me/5545999235688" target="_blank">WhatsApp</a>
-      
-      <!-- Link ativo para Catálogo -->
       <a href="servicos.html" class="active">Catálogo</a>
-      
-      <!-- Link para Orçamento -->
       <a href="https://chamati.net/contato">Orçamento</a>
     </nav>
   </div>
@@ -35,48 +24,124 @@
   <!-- Barra de título decorativa animada -->
   <div class="title-bar"></div>
 
-  <!-- Conteúdo principal do catálogo -->
+  <!-- Conteúdo principal -->
   <main class="catalog-container">
-    <!-- Título da página de catálogo -->
-    <h1 class="catalog-title">Nossos Serviços</h1>
+    <h1 class="catalog-title">Nossos Serviços em TI</h1>
     
-    <!-- Grade de serviços -->
+    <!-- Seção de Diferenciais -->
+    <section class="differentials-section">
+      <h2>Por que escolher a Chama TI?</h2>
+      <div class="differentials-grid">
+        <div class="differential-item">
+          <div class="differential-icon">✅</div>
+          <div class="differential-content">
+            <h3>Expertise Técnica</h3>
+            <p>Profissionais certificados em infraestrutura crítica e segurança</p>
+          </div>
+        </div>
+        <div class="differential-item">
+          <div class="differential-icon">⏱️</div>
+          <div class="differential-content">
+            <h3>Monitoramento 24/7</h3>
+            <p>Soluções proativas que antecipam problemas</p>
+          </div>
+        </div>
+        <div class="differential-item">
+          <div class="differential-icon">🔧</div>
+          <div class="differential-content">
+            <h3>Soluções Personalizadas</h3>
+            <p>Infraestrutura desenhada para suas necessidades específicas</p>
+          </div>
+        </div>
+        <div class="differential-item">
+          <div class="differential-icon">👨‍💻</div>
+          <div class="differential-content">
+            <h3>Suporte Especializado</h3>
+            <p>Equipe técnica disponível para atendimento rápido</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Serviços -->
     <div class="services-grid">
-      <!-- Card de Serviço 1 -->
-      <div class="service-card">
-        <div class="service-icon">🖥️</div>
-        <h3>Manutenção de Computadores</h3>
-        <p>Conserto preventivo e corretivo para todos os tipos de equipamentos</p>
-        <span class="price">R$ XX,00</span>
+      <!-- Serviço em destaque -->
+      <div class="service-card highlight-card">
+        <div class="service-icon">🔍</div>
+        <h3>Auditoria de Infraestrutura</h3>
+        <p>Diagnóstico completo + relatório detalhado com plano de melhorias para sua infraestrutura de TI</p>
+        <span class="price">Sob Consulta</span>
       </div>
       
-      <!-- Card de Serviço 2 -->
+      <!-- Infraestrutura -->
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Infraestrutura do Zero</h3>
+        <p>Criação e implantação completa de infraestrutura de TI sob medida para seu negócio</p>
+        <span class="price">Sob Consulta</span>
+      </div>
+      
+      <!-- Monitoramento -->
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Monitoramento 24/7</h3>
+        <p>Dashboards em tempo real com Zabbix/Grafana e alertas automatizados para sua equipe</p>
+        <span class="price">A partir de R$ 499/mês</span>
+      </div>
+      
+      <!-- Segurança -->
       <div class="service-card">
         <div class="service-icon">🛡️</div>
-        <h3>Proteção contra Vírus</h3>
-        <p>Remoção de malware e instalação de antivírus premium</p>
-        <span class="price">R$ XX,00</span>
+        <h3>Segurança de Rede</h3>
+        <p>Firewalls, proteção contra invasões e políticas de segurança personalizadas</p>
+        <span class="price">Sob Consulta</span>
       </div>
-      
-      <!-- Card de Serviço 3 -->
+
+      <!-- Telefonia -->
+      <div class="service-card">
+        <div class="service-icon">📞</div>
+        <h3>Telefonia IP</h3>
+        <p>Implantação de sistemas Asterisk completos com relatórios e integração</p>
+        <span class="price">Sob Consulta</span>
+      </div>
+
+      <!-- Treinamentos -->
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>Treinamentos</h3>
+        <p>Capacitação em ferramentas e segurança da informação para equipes técnicas</p>
+        <span class="price">Sob Consulta</span>
+      </div>
+
+      <!-- WiFi -->
       <div class="service-card">
         <div class="service-icon">📶</div>
-        <h3>Configuração de Redes</h3>
-        <p>Instalação e otimização de redes domésticas e empresariais</p>
-        <span class="price">R$ XX,00</span>
+        <h3>WiFi Empresarial</h3>
+        <p>Projetos para redes estáveis em ambientes corporativos e eventos</p>
+        <span class="price">Sob Consulta</span>
       </div>
-      
-      <!-- Card de Serviço 4 -->
+
+      <!-- Câmeras -->
       <div class="service-card">
-        <div class="service-icon">☁️</div>
-        <h3>Backup em Nuvem</h3>
-        <p>Soluções seguras de armazenamento e recuperação de dados</p>
-        <span class="price">R$ XX,00/mês</span>
+        <div class="service-icon">📹</div>
+        <h3>Sistemas de Câmeras</h3>
+        <p>Instalação e configuração de sistemas de monitoramento visual</p>
+        <span class="price">Sob Consulta</span>
       </div>
+    </div>
+
+    <!-- Chamada para Ação -->
+    <div class="cta-section">
+      <h2>Precisa de uma solução personalizada?</h2>
+      <p>Nossa equipe está pronta para entender suas necessidades e oferecer a melhor solução em TI</p>
+      <a href="https://wa.me/5545999235688" class="cta-button">
+        <span>Fale com nosso especialista</span>
+        <span class="icon">💬</span>
+      </a>
     </div>
   </main>
 
-  <!-- Botão de ajuda flutuante (consistente com outras páginas) -->
-  <a class="help-button" href="https://chamati.net">Ajuda</a>
+  <!-- Botão de ajuda flutuante -->
+  <a class="help-button" href="https://chamati.net/ajuda">Ajuda</a>
 </body>
 </html>
