@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Meta tags otimizadas -->
+  <!-- 
+    Meta tags essenciais para SEO e configuração inicial 
+    - charset: Define a codificação de caracteres como UTF-8 (suporta acentos e caracteres especiais)
+    - viewport: Configura a viewport para dispositivos móveis (responsividade)
+    - description: Meta descrição para SEO (aparece nos resultados de busca)
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Chama TI - Soluções em Tecnologia da Informação">
+  
+  <!-- Título da página (aparece na aba do navegador e nos resultados de busca) -->
   <title>Chama TI - Suporte Especializado em TI</title>
   
-  <!-- Pré-conexão para CDNs -->
+  <!-- 
+    Pré-conexão para CDNs - Melhora performance ao pré-conectar com servidores de terceiros
+    Isso acelera o carregamento dos ícones do Bootstrap
+  -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   
-  <!-- CSS -->
- <link rel="stylesheet" href="css/styles.css">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- 
+    Folhas de estilo (CSS)
+    - styles.css: Estilos customizados do projeto
+    - bootstrap-icons: CDN para ícones do Bootstrap
+    Ordem é importante: primeiro o CSS base, depois bibliotecas
+  -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   
-  <!-- Favicon moderno -->
+  <!-- 
+    Favicon e ícones para dispositivos
+    - SVG: Formato moderno e escalável para favicon
+    - apple-touch-icon: Ícone para quando adicionar à tela inicial em iOS
+    - manifest: Para PWA (Progressive Web App)
+    - theme-color: Cor da barra de endereço em dispositivos móveis
+  -->
   <link rel="icon" href="assets/TIcon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/TIcon.svg">
   <link rel="manifest" href="site.webmanifest">
@@ -22,83 +43,142 @@
 </head>
 
 <body>
-  <!-- Barra de navegação superior -->
+  <!-- 
+    Barra de navegação superior (Toolbar)
+    - header: Tag semântica para cabeçalho
+    - class toolbar: Classe principal para estilização
+  -->
   <header class="toolbar">
-    <!-- Navegação principal -->
-     <nav class="toolbar-nav">
+    <!-- 
+      Navegação principal
+      - nav: Tag semântica para menus de navegação
+      - toolbar-nav: Classe para estilização específica
+    -->
+    <nav class="toolbar-nav">
+      <!-- Seção esquerda da toolbar (links de navegação) -->
       <div class="toolbar-section toolbar-left">
+        <!-- Link para WhatsApp -->
         <a href="https://wa.me/5545999235688" target="_blank" class="nav-button" aria-label="WhatsApp">
-          <i class="bi bi-whatsapp"></i>
-          <span>WhatsApp</span>
+          <i class="bi bi-whatsapp"></i> <!-- Ícone do Bootstrap -->
+          <span>WhatsApp</span> <!-- Texto visível -->
         </a>
-        <a href="https://chamati.net/servicos" class="nav-button" aria-label="Serviços">
+        
+        <!-- Link para Serviços -->
+        <a href="servicos.html" class="nav-button" aria-label="Serviços">
           <i class="bi bi-layout-wtf"></i>
           <span>Serviços</span>
         </a>
-        <a href="https://chamati.net/contato" class="nav-button" aria-label="Contato">
+        
+        <!-- Link para Contato -->
+        <a href="contato.html" class="nav-button" aria-label="Contato">
           <i class="bi bi-people"></i>
           <span>Contato</span>
         </a>
       </div>
       
+      <!-- Seção central da toolbar (logo) -->
       <div class="toolbar-section toolbar-center">
-        <a href="https://chamati.net" class="logo-link" aria-label="Página inicial">
+        <a href="index.html" class="logo-link" aria-label="Página inicial">
+          <!-- 
+            Logo da empresa
+            - width/height: Define dimensões explícitas para melhor performance
+            - alt: Texto alternativo para acessibilidade
+          -->
           <img src="assets/TIcon.svg" alt="Chama TI" width="180" height="40" class="logo-img">
         </a>
       </div>
       
+      <!-- Seção direita da toolbar (seletor de idiomas) -->
       <div class="toolbar-section toolbar-right">
         <div class="language-selector">
+          <!-- Botão do seletor de idiomas -->
           <button class="language-button" aria-expanded="false" aria-label="Seletor de idiomas">
-            <i class="bi bi-globe"></i>
-            <span>Português</span>
-            <i class="bi bi-chevron-down"></i>
+            <i class="bi bi-globe"></i> <!-- Ícone de globo -->
+            <span>Português</span> <!-- Idioma atual -->
+            <i class="bi bi-chevron-down"></i> <!-- Ícone de dropdown -->
           </button>
+          
+          <!-- Menu suspenso de idiomas -->
           <ul class="language-menu">
-            <li><a href="#" class="active">Português</a></li>
-            <li><a href="#">English</a></li>
+            <li><a href="#" class="active">Português</a></li> <!-- Item ativo -->
+            <li><a href="#">English</a></li> <!-- Outro idioma -->
           </ul>
         </div>
       </div>
     </nav>
     
-    <!-- Barra decorativa -->
+    <!-- 
+      Barra decorativa animada
+      - Elemento puramente visual com efeito de gradiente animado
+    -->
     <div class="title-bar"></div>
   </header>
 
-  <!-- Conteúdo principal -->
+  <!-- 
+    Conteúdo principal da página
+    - main: Tag semântica para o conteúdo principal
+    - main-content: Classe para estilização
+  -->
   <main class="main-content">
+    <!-- Container do herói (seção principal) -->
     <div class="hero-container">
+      <!-- Container da imagem -->
       <div class="hero-image-container">
+        <!-- 
+          Imagem principal
+          - Mesmo SVG do logo pode ser reutilizado
+          - Classe para animação específica
+        -->
         <img src="assets/TIcon.svg" alt="Chama TI" class="hero-image">
       </div>
+      
+      <!-- Container do texto -->
       <div class="hero-text">
+        <!-- Título principal -->
         <h1>Sobre</h1>
+        <!-- Parágrafo descritivo -->
         <p>A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação. Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis e bem documentados — prontos para crescer junto com nossos clientes.</p>
       </div>
     </div>
   </main>
 
-  <!-- Botão de ajuda flutuante -->
+  <!-- 
+    Botão de ajuda flutuante
+    - Posicionamento fixo na tela
+    - Efeitos de hover e transição
+  -->
   <a href="https://chamati.net/contato" class="help-button">
-    <i class="bi bi-question-circle-fill"></i>
-    <span>Precisa de ajuda?</span>
+    <i class="bi bi-question-circle-fill"></i> <!-- Ícone de ajuda -->
+    <span>Precisa de ajuda?</span> <!-- Texto do botão -->
   </a>
 
-  <!-- Scripts -->
+  <!-- 
+    Scripts JavaScript
+    - Colocados no final do body para melhor performance
+    - Não bloqueiam renderização da página
+  -->
   <script>
-    // Controle do menu de idiomas
+    /**
+     * Controle do menu de idiomas
+     * - Alterna visibilidade do menu dropdown
+     * - Gerencia estado aria-expanded para acessibilidade
+     * - Adiciona rotação ao ícone de dropdown
+     */
     document.querySelector('.language-button').addEventListener('click', function(e) {
-      e.preventDefault();
+      e.preventDefault(); // Previne comportamento padrão
       const menu = this.nextElementSibling;
       const isExpanded = this.getAttribute('aria-expanded') === 'true';
       
+      // Alterna estado do menu
       this.setAttribute('aria-expanded', !isExpanded);
       menu.classList.toggle('visible');
       this.querySelector('.bi-chevron-down').classList.toggle('rotate');
     });
     
-    // Fechar menu ao clicar fora
+    /**
+     * Fechar menu ao clicar fora
+     * - Melhora usabilidade fechando o menu quando clica em outras áreas
+     */
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.language-selector')) {
         const menu = document.querySelector('.language-menu');
