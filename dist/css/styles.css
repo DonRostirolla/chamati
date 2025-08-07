@@ -145,12 +145,11 @@ img {
 
 .toolbar__nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 100%;
-  padding: 0 1rem;
-  max-width: 1440px;
-  margin: 0 auto;
+  justify-content: space-between;
+  padding: 12px 30px;
+  background-color: #137a7f; /* Fundo verde petróleo */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .toolbar__logo-container {
