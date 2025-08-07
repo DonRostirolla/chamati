@@ -1,6 +1,6 @@
 /* ===== VARIÁVEIS E RESET MODERNO ===== */
 :root {
-  --primary: #007b7f;
+  --primary: #137a7f;
   --primary-dark: #006266;
   --primary-light: #86cecb;
   --secondary: #e12885;
@@ -32,7 +32,7 @@ body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: var(--gray-800);
-  background-color: #137a7f);
+  background-color: #17cad4;
   overflow-x: hidden;
 }
 
