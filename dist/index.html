@@ -116,7 +116,7 @@
 
 <body>
   <!-- TOOLBAR -->
-  <header class="toolbar">
+  <div id="navbar-container">
     <nav class="toolbar__nav">
       <!-- Logo -->
      <div class="toolbar__logo-container">
@@ -143,7 +143,7 @@
         <div class="toolbar__empty-space"></div>
   </nav>
   <div class="title-bar"></div> <!-- Barra decorativa inferior -->
-</header>
+</div>
 
   <!-- CONTEÚDO PRINCIPAL (APENAS SOBRE) -->
   <main class="main-content">
@@ -173,5 +173,34 @@
     <i class="bi bi-whatsapp"></i>
     <span>Precisa de ajuda?</span>
   </a>
+  <script>
+  /**
+   * Carrega a toolbar de forma dinâmica
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('toolbar.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Falha ao carregar a toolbar');
+        }
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+
+        // Ativa o link ativo na toolbar
+        const currentPage = window.location.pathname.split('/').pop();
+        document.querySelectorAll('.nav-button').forEach(link => {
+          if (link.getAttribute('href').includes(currentPage)) {
+            link.classList.add('active');
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar toolbar:', error);
+      });
+  });
+</script>
+
 </body>
 </html>
