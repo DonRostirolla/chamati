@@ -12,6 +12,103 @@
   
   <!-- Favicon -->
   <link rel="icon" href="assets/TI.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    /* Container principal para limitar largura e centralizar */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Espaçamento para a toolbar */
+    .toolbar {
+      padding: 15px 20px;
+    }
+    
+    /* Espaçamento para o conteúdo principal */
+    .main-content {
+      padding: 30px 20px;
+    }
+    
+    /* Títulos com espaçamento melhorado */
+    h1 {
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      color: #2c3e50;
+    }
+    
+    h2 {
+      margin: 40px 0 20px;
+      font-size: 1.8rem;
+      color: #2c3e50;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 10px;
+    }
+    
+    h3 {
+      margin: 25px 0 15px;
+      font-size: 1.4rem;
+      color: #34495e;
+    }
+    
+    /* Parágrafos com espaçamento */
+    p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    /* Diferenciais com espaçamento */
+    .differential-item {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .differential-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Hero image com margem inferior */
+    .hero-image-container {
+      margin-bottom: 40px;
+    }
+    
+    /* Botão de ajuda flutuante */
+    .help-button {
+      right: 30px;
+      bottom: 30px;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 15px;
+      }
+      
+      .main-content {
+        padding: 20px 10px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -61,37 +158,39 @@
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="main-content">
-    <div class="hero-container">
-      <div class="hero-image-container">
-        <img src="assets/chamati.png" alt="Chama TI" class="hero-image">
-      </div>
-      
-      <div class="hero-text">
-        <h1>Sobre</h1>
-        <p>A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação. Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis e bem documentados — prontos para crescer junto com nossos clientes.</p>
+    <div class="main-container">
+      <div class="hero-container">
+        <div class="hero-image-container">
+          <img src="assets/chamati.png" alt="Chama TI" class="hero-image">
+        </div>
         
-        <!-- Seção de Diferenciais -->
-        <div class="differentials">
-          <h2>Nossos Diferenciais</h2>
-          <div class="differential-item">
-            <i class="bi bi-shield-check"></i>
-            <div>
-              <h3>Segurança</h3>
-              <p>Soluções de segurança personalizadas para proteger seus dados e infraestrutura.</p>
+        <div class="hero-text">
+          <h1>Sobre</h1>
+          <p>A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação. Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis e bem documentados — prontos para crescer junto com nossos clientes.</p>
+          
+          <!-- Seção de Diferenciais -->
+          <div class="differentials">
+            <h2>Nossos Diferenciais</h2>
+            <div class="differential-item">
+              <i class="bi bi-shield-check"></i>
+              <div>
+                <h3>Segurança</h3>
+                <p>Soluções de segurança personalizadas para proteger seus dados e infraestrutura.</p>
+              </div>
             </div>
-          </div>
-          <div class="differential-item">
-            <i class="bi bi-speedometer2"></i>
-            <div>
-              <h3>Performance</h3>
-              <p>Infraestrutura otimizada para máxima performance e disponibilidade.</p>
+            <div class="differential-item">
+              <i class="bi bi-speedometer2"></i>
+              <div>
+                <h3>Performance</h3>
+                <p>Infraestrutura otimizada para máxima performance e disponibilidade.</p>
+              </div>
             </div>
-          </div>
-          <div class="differential-item">
-            <i class="bi bi-headset"></i>
-            <div>
-              <h3>Suporte</h3>
-              <p>Suporte técnico especializado disponível quando você precisar.</p>
+            <div class="differential-item">
+              <i class="bi bi-headset"></i>
+              <div>
+                <h3>Suporte</h3>
+                <p>Suporte técnico especializado disponível quando você precisar.</p>
+              </div>
             </div>
           </div>
         </div>
