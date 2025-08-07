@@ -19,113 +19,97 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #333;
+      background-color: #f8f9fa; /* Fundo claro para melhor contraste */
     }
     
-    /* Container principal para limitar largura e centralizar */
+    /* Container principal */
     .main-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
     
-    /* Layout flexível para a seção hero */
+    /* Layout flexível */
     .hero-container {
       display: flex;
       gap: 40px;
-      align-items: flex-start;
+      align-items: center;
+      min-height: 70vh;
     }
     
-    /* Estilo para a imagem à esquerda */
+    /* Imagem à esquerda com fundo transparente */
     .hero-image-container {
-      flex: 0 0 40%;
-      max-width: 40%;
+      flex: 0 0 45%;
+      display: flex;
+      justify-content: center;
     }
     
     .hero-image {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      /* Garantir que o fundo da imagem seja transparente */
+      mix-blend-mode: multiply;
     }
     
-    /* Estilo para o conteúdo à direita */
+    /* Conteúdo à direita */
     .hero-text {
       flex: 1;
     }
     
-    /* Espaçamento para a toolbar */
+    /* Toolbar */
     .toolbar {
       padding: 15px 20px;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     
-    /* Títulos com espaçamento melhorado */
+    /* Títulos */
     h1 {
       margin-bottom: 25px;
       font-size: 2.2rem;
       color: #2c3e50;
     }
     
-    h2 {
-      margin: 30px 0 20px;
-      font-size: 1.8rem;
-      color: #2c3e50;
-      border-bottom: 2px solid #f0f0f0;
-      padding-bottom: 10px;
-    }
-    
-    h3 {
-      margin: 20px 0 10px;
-      font-size: 1.4rem;
-      color: #34495e;
-    }
-    
-    /* Parágrafos com espaçamento */
+    /* Parágrafos */
     p {
       margin-bottom: 20px;
       line-height: 1.7;
+      font-size: 1.1rem;
     }
     
-    /* Diferenciais com espaçamento */
-    .differential-item {
-      margin-bottom: 30px;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
+    /* Links */
+    a {
+      text-decoration: none;
+      color: inherit;
     }
     
-    .differential-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    /* Botão de ajuda flutuante */
+    /* Botão de ajuda */
     .help-button {
+      position: fixed;
       right: 30px;
       bottom: 30px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 100;
     }
     
-    /* Responsividade - empilha em telas menores */
+    /* Responsivo */
     @media (max-width: 768px) {
       .hero-container {
         flex-direction: column;
+        padding-top: 30px;
       }
       
       .hero-image-container {
         flex: 1;
-        max-width: 100%;
-      }
-      
-      .main-container {
-        padding: 15px;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
+        width: 80%;
+        margin-bottom: 30px;
       }
     }
   </style>
@@ -135,14 +119,14 @@
   <!-- TOOLBAR -->
   <header class="toolbar">
     <nav class="toolbar__nav">
-      <!-- Ícone à esquerda -->
+      <!-- Logo -->
       <div class="toolbar__logo-container">
         <a href="index.html" class="toolbar__logo-link">
           <img src="assets/TI.png" alt="Chama TI" class="toolbar__logo-img" width="40" height="40">
         </a>
       </div>
       
-      <!-- Links centralizados -->
+      <!-- Links -->
       <div class="toolbar__links-container">
         <a href="https://wa.me/5545999235688" class="toolbar__button">
           <i class="bi bi-whatsapp"></i>
@@ -157,99 +141,36 @@
           <span>Contato</span>
         </a>
       </div>
-      
-      <!-- Seletor de idiomas à direita -->
-      <div class="toolbar__language-container">
-        <div class="language-selector">
-          <button class="language-button">
-            <i class="bi bi-globe"></i>
-            <span>Português</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <ul class="language-menu">
-            <li><a href="#" class="active">Português</a></li>
-            <li><a href="#">English</a></li>
-          </ul>
-        </div>
-      </div>
     </nav>
-    <div class="title-bar"></div>
   </header>
 
-  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- CONTEÚDO PRINCIPAL (APENAS SOBRE) -->
   <main class="main-content">
     <div class="main-container">
       <div class="hero-container">
-        <!-- Imagem à esquerda -->
+        <!-- Imagem à esquerda com fundo transparente -->
         <div class="hero-image-container">
           <img src="assets/chamati.png" alt="Chama TI" class="hero-image">
         </div>
         
-        <!-- Conteúdo à direita -->
+        <!-- Conteúdo à direita (apenas Sobre) -->
         <div class="hero-text">
           <h1>Sobre</h1>
           <p>A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação. Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis e bem documentados — prontos para crescer junto com nossos clientes.</p>
           
-          <!-- Seção de Diferenciais -->
-          <div class="differentials">
-            <h2>Nossos Diferenciais</h2>
-            <div class="differential-item">
-              <i class="bi bi-shield-check"></i>
-              <div>
-                <h3>Segurança</h3>
-                <p>Soluções de segurança personalizadas para proteger seus dados e infraestrutura.</p>
-              </div>
-            </div>
-            <div class="differential-item">
-              <i class="bi bi-speedometer2"></i>
-              <div>
-                <h3>Performance</h3>
-                <p>Infraestrutura otimizada para máxima performance e disponibilidade.</p>
-              </div>
-            </div>
-            <div class="differential-item">
-              <i class="bi bi-headset"></i>
-              <div>
-                <h3>Suporte</h3>
-                <p>Suporte técnico especializado disponível quando você precisar.</p>
-              </div>
-            </div>
-          </div>
+          <!-- Botão de contato adicional -->
+          <a href="contato.html" style="display: inline-block; background-color: #2c3e50; color: white; padding: 12px 25px; border-radius: 5px; margin-top: 20px;">
+            Entre em Contato
+          </a>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Botão de ajuda flutuante a -->
+  <!-- Botão de ajuda flutuante -->
   <a href="https://wa.me/5545999235688" class="help-button">
-    <i class="bi bi-question-circle-fill"></i>
+    <i class="bi bi-whatsapp"></i>
     <span>Precisa de ajuda?</span>
   </a>
-
-  <!-- SCRIPTS -->
-  <script>
-    // Controle do menu de idiomas
-    document.querySelector('.language-button').addEventListener('click', function(e) {
-      e.preventDefault();
-      const menu = this.nextElementSibling;
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      
-      this.setAttribute('aria-expanded', !isExpanded);
-      menu.classList.toggle('visible');
-      this.querySelector('.bi-chevron-down').classList.toggle('rotate');
-    });
-    
-    // Fechar menu ao clicar fora
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.language-selector')) {
-        const menu = document.querySelector('.language-menu.visible');
-        if (menu) {
-          menu.classList.remove('visible');
-          document.querySelector('.language-button').setAttribute('aria-expanded', 'false');
-          document.querySelector('.bi-chevron-down').classList.remove('rotate');
-        }
-      }
-    });
-  </script>
 </body>
 </html>
