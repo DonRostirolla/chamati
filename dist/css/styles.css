@@ -125,13 +125,12 @@ img {
   animation: float 6s ease-in-out infinite;
 }
 
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-1rem); }
 }
 
-/* ===== TOOLBAR ===== */
+/* ===== TOOLBAR REORGANIZADA ===== */
 .toolbar {
   position: fixed;
   top: 0;
@@ -143,76 +142,73 @@ img {
   box-shadow: var(--shadow-lg);
   z-index: 1000;
 }
-/* Garante que a toolbar injetada tenha estilos */
-#navbar-container .toolbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  /* outros estilos da toolbar */
-}
 
-#navbar-container .nav-button.active {
-  background-color: var(--secondary);
-}
-
-.toolbar-nav {
-  height: 100%;
+.toolbar__nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
   max-width: 1440px;
   margin: 0 auto;
 }
 
-.toolbar-section {
+.toolbar__logo-container {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+}
+
+.toolbar__links-container {
+  flex: 1;
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
-/* Logo */
-.logo-link {
-  transition: transform 0.3s ease;
+.toolbar__empty-space {
+  flex: 0 0 auto;
+  width: 40px; /* Mesma largura do ícone para balancear */
 }
 
-.logo-link:hover {
-  transform: scale(1.05);
-}
-
-.logo-img {
-  height: 2.5rem;
-  width: auto;
-  transition: filter 0.3s ease;
-}
-
-.logo-link:hover .logo-img {
-  filter: brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-/* Botões de navegação */
-.nav-button {
-  display: inline-flex;
+/* Botões da Toolbar */
+.toolbar__button {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem 1rem;
+  justify-content: center;
+  padding: 0.5rem 1rem;
   color: var(--white);
   text-decoration: none;
-  border-radius: 0.375rem;
-  font-weight: 500;
+  border-radius: 0.5rem;
   transition: var(--transition);
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 80px;
 }
 
-.nav-button:hover {
+.toolbar__button:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
 
-.nav-button .bi {
-  font-size: 1.1rem;
+.toolbar__icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.toolbar__button-text {
+  font-size: 0.875rem;
+}
+
+/* Logo reduzido e à esquerda */
+.toolbar__logo-img {
+  height: 40px;
+  width: auto;
+  transition: filter 0.3s ease;
+}
+
+.toolbar__logo-link:hover .toolbar__logo-img {
+  filter: brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 /* Seletor de idiomas */
@@ -339,56 +335,17 @@ img {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 992px) {
-  .toolbar-nav {
-    padding: 0 1.5rem;
+  .toolbar__button-text {
+    font-size: 0.75rem;
   }
   
-  .nav-button span {
-    display: none;
-  }
-  
-  .nav-button .bi {
+  .toolbar__icon {
     font-size: 1.25rem;
   }
 }
 
 @media (max-width: 768px) {
-  .toolbar-nav {
-    flex-wrap: wrap;
-    padding: 0.5rem 1rem;
-    height: auto;
-  }
-  
-  .toolbar-section {
-    width: 100%;
-    justify-content: center;
-    padding: 0.25rem 0;
-  }
-  
-  .toolbar-left {
-    order: 2;
-  }
-  
-  .toolbar-center {
-    order: 1;
-  }
-  
-  .toolbar-right {
-    order: 3;
-  }
-  
-  .help-button {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.875rem;
-  }
-  
-  .help-button span {
-    display: none;
-  }
-}
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
-  .hero-container {
+  .hero-banner {
     flex-direction: column;
     padding: 0 1rem;
     gap: 2rem;
@@ -407,6 +364,72 @@ img {
   .hero-text p {
     font-size: 1rem;
   }
+
+  /* Toolbar Mobile */
+  .toolbar {
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .toolbar__nav {
+    flex-wrap: wrap;
+    padding: 0.5rem;
+  }
+
+  .toolbar__logo-container {
+    order: 1;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  .toolbar__links-container {
+    order: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .toolbar__empty-space {
+    display: none;
+  }
+
+  .toolbar__button {
+    padding: 0.5rem;
+    min-width: auto;
+  }
+
+  .help-button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .help-button span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar__button-text {
+    display: none;
+  }
+  
+  .toolbar__button {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+  
+  .toolbar__icon {
+    margin-bottom: 0;
+  }
+
+  .toolbar__logo-img {
+    height: 35px;
+  }
 }
 
 /* Animações adicionais */
@@ -418,99 +441,13 @@ img {
 .main-content {
   animation: fadeIn 0.8s ease-out forwards;
 }
-/* ===== TOOLBAR MOBILE ===== */
-@media (max-width: 768px) {
-  .toolbar {
-    height: auto;
-    padding: 0.5rem;
-  }
 
-  .toolbar-nav {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 0;
-    height: auto;
-  }
-
-  .toolbar-section {
-    width: 100%;
-    padding: 0.25rem 0;
-  }
-
-  /* Seção esquerda (botões de navegação) */
-  .toolbar-left {
-    order: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-  }
-
-  /* Seção central (logo) */
-  .toolbar-center {
-    order: 1;
-    justify-content: center;
-    padding: 0;
-  }
-
-  /* Seção direita (idioma) */
-  .toolbar-right {
-    order: 3;
-    justify-content: flex-end;
-    margin-top: 0.5rem;
-  }
-
-  /* Botões de navegação */
-  .nav-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    min-height: 3rem;
-    border-radius: 0.25rem;
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .nav-button .bi {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-  }
-
-  /* Seletor de idioma */
-  .language-button {
-    padding: 0.5rem 0.75rem;
-  }
-
-  .language-button .bi-globe {
-    margin-right: 0;
-  }
-
-  /* Logo */
-  .logo-img {
-    height: 2.25rem;
-  }
-}
-
-/* Ajustes para telas muito pequenas (menos de 400px) */
-@media (max-width: 400px) {
-  .toolbar-left {
-    gap: 0.25rem;
-    padding: 0.25rem;
-  }
-
-  .nav-button {
-    padding: 0.25rem;
-  }
-
-  .nav-button .bi {
-    font-size: 1.1rem;
-  }
-
-  .language-button {
-    padding: 0.25rem 0.5rem;
+/* Redução de movimento para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
