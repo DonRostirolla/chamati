@@ -1,194 +1,245 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <!-- 
-    Meta tags essenciais para SEO e configuração inicial 
-    - charset: Define a codificação de caracteres como UTF-8 (suporta acentos e caracteres especiais)
-    - viewport: Configura a viewport para dispositivos móveis (responsividade)
-    - description: Meta descrição para SEO (aparece nos resultados de busca)
+    METADADOS ESSENCIAIS 
+    - Codificação UTF-8 para caracteres especiais
+    - Viewport otimizado para mobile
+    - Metatags SEO melhoradas
+    - Pré-conexões para CDNs críticas
   -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chama TI - Soluções em Tecnologia da Informação">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="description" content="Chama TI - Soluções completas em Tecnologia da Informação com foco em infraestrutura, segurança e performance">
+  <meta name="keywords" content="TI, infraestrutura, segurança, redes, suporte técnico, consultoria">
+  <meta name="author" content="Chama TI">
   
-  <!-- Título da página (aparece na aba do navegador e nos resultados de busca) -->
-  <title>Chama TI - Suporte Especializado em TI</title>
+  <!-- Pré-conexão para recursos externos -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   
-  <!-- 
-    Pré-conexão para CDNs - Melhora performance ao pré-conectar com servidores de terceiros
-    Isso acelera o carregamento dos ícones do Bootstrap
-  -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <!-- Pré-carregar recursos críticos -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="assets/TI.png" as="image" type="image/png">
   
-  <!-- 
-    Folhas de estilo (CSS)
-    - styles.css: Estilos customizados do projeto
-    - bootstrap-icons: CDN para ícones do Bootstrap
-    Ordem é importante: primeiro o CSS base, depois bibliotecas
-  -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Título otimizado para SEO -->
+  <title>Chama TI | Soluções em Infraestrutura e Segurança de TI</title>
+  
+  <!-- CSS principal com fallback -->
+  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <noscript>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap-icons-fallback.css">
+  </noscript>
   
-  <!-- 
-    Favicon e ícones para dispositivos
-    - SVG: Formato moderno e escalável para favicon
-    - apple-touch-icon: Ícone para quando adicionar à tela inicial em iOS
-    - manifest: Para PWA (Progressive Web App)
-    - theme-color: Cor da barra de endereço em dispositivos móveis
-  -->
-  <link rel="icon" href="assets/TI.png" type="image/svg+xml">
+  <!-- Favicon moderno com múltiplos formatos -->
+  <link rel="icon" href="assets/TI.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/TI.png">
+  
+  <!-- Web App Manifest -->
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#007b7f">
+  
+  <!-- Meta tags para compartilhamento -->
+  <meta property="og:title" content="Chama TI | Soluções em Infraestrutura de TI">
+  <meta property="og:description" content="Soluções completas em Tecnologia da Informação com foco em infraestrutura, segurança e performance">
+  <meta property="og:image" content="https://chamati.net/assets/social-share.jpg">
+  <meta property="og:url" content="https://chamati.net">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
   <!-- 
-    Barra de navegação superior (Toolbar)
-    - header: Tag semântica para cabeçalho
-    - class toolbar: Classe principal para estilização
+    TOOLBAR DINÂMICA
+    - Carregada via JavaScript para reutilização
+    - Fallback implementado caso o JavaScript falhe
   -->
-  <header class="toolbar">
-    <!-- 
-      Navegação principal
-      - nav: Tag semântica para menus de navegação
-      - toolbar-nav: Classe para estilização específica
-    -->
-    <nav class="toolbar-nav">
-      <!-- Seção esquerda da toolbar (links de navegação) -->
-      <div class="toolbar-section toolbar-left">
-        <!-- Link para WhatsApp -->
-        <a href="https://wa.me/5545999235688" target="_blank" class="nav-button" aria-label="WhatsApp">
-          <i class="bi bi-whatsapp"></i> <!-- Ícone do Bootstrap -->
-          <span>WhatsApp</span> <!-- Texto visível -->
-        </a>
-        
-        <!-- Link para Serviços -->
-        <a href="servicos.html" class="nav-button" aria-label="Serviços">
-          <i class="bi bi-layout-wtf"></i>
-          <span>Serviços</span>
-        </a>
-        
-        <!-- Link para Contato -->
-        <a href="contato.html" class="nav-button" aria-label="Contato">
-          <i class="bi bi-people"></i>
-          <span>Contato</span>
-        </a>
-      </div>
-      
-      <!-- Seção central da toolbar (logo) -->
-      <div class="toolbar-section toolbar-center">
-        <a href="index.html" class="logo-link" aria-label="Página inicial">
-          <!-- 
-            Logo da empresa
-            - width/height: Define dimensões explícitas para melhor performance
-            - alt: Texto alternativo para acessibilidade
-          -->
-          <img src="assets/TI.png" alt="Chama TI" width="180" height="40" class="logo-img">
-        </a>
-      </div>
-      
-      <!-- Seção direita da toolbar (seletor de idiomas) -->
-      <div class="toolbar-section toolbar-right">
-        <div class="language-selector">
-          <!-- Botão do seletor de idiomas -->
-          <button class="language-button" aria-expanded="false" aria-label="Seletor de idiomas">
-            <i class="bi bi-globe"></i> <!-- Ícone de globo -->
-            <span>Português</span> <!-- Idioma atual -->
-            <i class="bi bi-chevron-down"></i> <!-- Ícone de dropdown -->
-          </button>
-          
-          <!-- Menu suspenso de idiomas -->
-          <ul class="language-menu">
-            <li><a href="#" class="active">Português</a></li> <!-- Item ativo -->
-            <li><a href="#">English</a></li> <!-- Outro idioma -->
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
-    <!-- 
-      Barra decorativa animada
-      - Elemento puramente visual com efeito de gradiente animado
-    -->
-    <div class="title-bar"></div>
-  </header>
+  <div id="navbar-container">
+    <!-- Fallback básico para quando JS estiver desabilitado -->
+    <noscript>
+      <header class="toolbar-fallback">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </header>
+    </noscript>
+  </div>
 
   <!-- 
-    Conteúdo principal da página
-    - main: Tag semântica para o conteúdo principal
-    - main-content: Classe para estilização
+    CONTEÚDO PRINCIPAL
+    - Estrutura semântica otimizada
+    - Classes BEM para melhor organização
+    - Animações controladas por prefers-reduced-motion
   -->
-  <main class="main-content">
-    <!-- Container do herói (seção principal) -->
-    <div class="hero-container">
-      <!-- Container da imagem -->
-      <div class="hero-image-container">
-        <!-- 
-          Imagem principal
-          - Mesmo SVG do logo pode ser reutilizado
-          - Classe para animação específica
-        -->
-        <img src="assets/chamati.png" alt="Chama TI" class="hero-image">
+  <main class="main-content" id="main-content">
+    <div class="hero">
+      <div class="hero__image-container">
+        <!-- Imagem otimizada com lazy loading -->
+        <img src="assets/chamati.png" 
+             alt="Chama TI - Soluções em Tecnologia" 
+             class="hero__image" 
+             loading="lazy" 
+             width="320" 
+             height="320">
       </div>
       
-      <!-- Container do texto -->
-      <div class="hero-text">
-        <!-- Título principal -->
-        <h1>Sobre</h1>
-        <!-- Parágrafo descritivo -->
-        <p>A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação. Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis e bem documentados — prontos para crescer junto com nossos clientes.</p>
+      <div class="hero__text">
+        <h1 class="hero__title">Sobre</h1>
+        <p class="hero__description">
+          A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação. 
+          Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes 
+          estáveis e bem documentados — prontos para crescer junto com nossos clientes.
+        </p>
+        
+        <!-- Chamada para ação principal -->
+        <div class="hero__cta">
+          <a href="servicos.html" class="button button--primary">Nossos Serviços</a>
+          <a href="contato.html" class="button button--outline">Fale Conosco</a>
+        </div>
       </div>
     </div>
+    
+    <!-- Seção de Diferenciais -->
+    <section class="differentials" aria-labelledby="diferenciais-title">
+      <h2 id="diferenciais-title" class="differentials__title">Nossos Diferenciais</h2>
+      
+      <div class="differentials__grid">
+        <!-- Item 1 -->
+        <article class="differential-card">
+          <i class="bi bi-shield-check differential-card__icon" aria-hidden="true"></i>
+          <h3 class="differential-card__title">Segurança</h3>
+          <p class="differential-card__text">
+            Soluções de segurança personalizadas para proteger seus dados e infraestrutura.
+          </p>
+        </article>
+        
+        <!-- Item 2 -->
+        <article class="differential-card">
+          <i class="bi bi-speedometer2 differential-card__icon" aria-hidden="true"></i>
+          <h3 class="differential-card__title">Performance</h3>
+          <p class="differential-card__text">
+            Infraestrutura otimizada para máxima performance e disponibilidade.
+          </p>
+        </article>
+        
+        <!-- Item 3 -->
+        <article class="differential-card">
+          <i class="bi bi-headset differential-card__icon" aria-hidden="true"></i>
+          <h3 class="differential-card__title">Suporte</h3>
+          <p class="differential-card__text">
+            Suporte técnico especializado disponível quando você precisar.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <!-- 
-    Botão de ajuda flutuante
-    - Posicionamento fixo na tela
-    - Efeitos de hover e transição
+    BOTÃO DE AJUDA FLUTUANTE
+    - Acessível e com feedback tátil
+    - Posicionamento seguro para mobile
   -->
-  <a href="https://chamati.net/contato" class="help-button">
-    <i class="bi bi-question-circle-fill"></i> <!-- Ícone de ajuda -->
-    <span>Precisa de ajuda?</span> <!-- Texto do botão -->
+  <a href="https://wa.me/5545999235688" class="floating-button" 
+     aria-label="Precisa de ajuda? Chame no WhatsApp">
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    <span class="floating-button__text">Precisa de ajuda?</span>
   </a>
 
   <!-- 
-    Scripts JavaScript
-    - Colocados no final do body para melhor performance
-    - Não bloqueiam renderização da página
+    SCRIPTS
+    - Carregamento não-bloqueante
+    - Fallback para casos de falha
+    - Tratamento de erros robusto
   -->
   <script>
-    /**
-     * Controle do menu de idiomas
-     * - Alterna visibilidade do menu dropdown
-     * - Gerencia estado aria-expanded para acessibilidade
-     * - Adiciona rotação ao ícone de dropdown
-     */
-    document.querySelector('.language-button').addEventListener('click', function(e) {
-      e.preventDefault(); // Previne comportamento padrão
-      const menu = this.nextElementSibling;
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    // Carrega a toolbar dinamicamente
+    function loadToolbar() {
+      const container = document.getElementById('navbar-container');
+      if (!container) return;
       
-      // Alterna estado do menu
-      this.setAttribute('aria-expanded', !isExpanded);
-      menu.classList.toggle('visible');
-      this.querySelector('.bi-chevron-down').classList.toggle('rotate');
-    });
+      fetch('toolbar.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Falha ao carregar a toolbar');
+          return response.text();
+        })
+        .then(html => {
+          container.innerHTML = html;
+          highlightCurrentPage();
+          setupLanguageSelector();
+        })
+        .catch(error => {
+          console.error('Erro ao carregar toolbar:', error);
+          container.innerHTML = `
+            <header class="toolbar-fallback">
+              <nav>
+                <a href="index.html">Home</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="contato.html">Contato</a>
+              </nav>
+            </header>
+          `;
+        });
+    }
     
-    /**
-     * Fechar menu ao clicar fora
-     * - Melhora usabilidade fechando o menu quando clica em outras áreas
-     */
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.language-selector')) {
-        const menu = document.querySelector('.language-menu');
-        if (menu.classList.contains('visible')) {
-          menu.classList.remove('visible');
-          document.querySelector('.language-button').setAttribute('aria-expanded', 'false');
-          document.querySelector('.bi-chevron-down').classList.remove('rotate');
+    // Destaca a página atual na toolbar
+    function highlightCurrentPage() {
+      const currentPage = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.toolbar__button').forEach(link => {
+        const linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage) {
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
         }
+      });
+    }
+
+    // Configura o seletor de idiomas
+    function setupLanguageSelector() {
+      const languageButton = document.querySelector('.language-button');
+      if (!languageButton) return;
+      
+      languageButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const menu = this.nextElementSibling;
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        this.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('visible');
+        this.querySelector('.bi-chevron-down').classList.toggle('rotate');
+      });
+      
+      // Fecha o menu ao clicar fora
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.language-selector')) {
+          const menu = document.querySelector('.language-menu.visible');
+          if (menu) {
+            menu.classList.remove('visible');
+            document.querySelector('.language-button')
+              .setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+    
+    // Inicia tudo quando o DOM estiver pronto
+    document.addEventListener('DOMContentLoaded', function() {
+      loadToolbar();
+      
+      // Adiciona classe para animações reduzidas se preferido
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('reduce-motion');
       }
     });
   </script>
+  
+  <!-- Fallback para navegadores sem suporte a JS -->
+  <noscript>
+    <style>
+      .floating-button, .toolbar-fallback { display: block !important; }
+      .reduce-motion * { animation: none !important; transition: none !important; }
+    </style>
+  </noscript>
 </body>
 </html>
