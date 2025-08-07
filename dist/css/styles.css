@@ -1,10 +1,10 @@
 /* ===== VARIÁVEIS E RESET MODERNO ===== */
 :root {
   --primary: #137a7f;
-  --primary-dark: #006266;
+  --primary-dark: #137a7f;
   --primary-light: #86cecb;
   --secondary: #e12885;
-  --secondary-dark: #c41e6e;
+  --secondary-dark: #e12885;
   --white: #ffffff;
   --gray-100: #f8f9fa;
   --gray-200: #e9ecef;
@@ -187,7 +187,7 @@ img {
 }
 
 .toolbar__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #137a7f;
   transform: translateY(-2px);
 }
 
