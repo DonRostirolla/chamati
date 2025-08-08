@@ -8,15 +8,16 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/contato.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Font Awesome icones-->
+  <!-- Font Awesome icones-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Adicione isto para os ícones 'fi' se necessário -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontisto/fontisto@latest/css/fontisto/fontisto.min.css">
 </head>
 <body>
   <!-- Container vazio para a toolbar -->
   <div id="navbar-container"></div>
 
-  <main class="contact-container">
-  <!-- CONTEUDO PRINCIPAL -->
+  <!-- CONTEUDO PRINCIPAL (corrigido: removi a tag <main> duplicada) -->
   <main class="contact-container">
     <!-- Título da seção de contato -->
     <h1 class="contact-title">Fale Conosco</h1>
@@ -38,24 +39,24 @@
       <div class="contact-info">
         <h2>Outras Formas de Contato</h2>
         
-<div class="contact-method">
-  <div class="contact-icon">
-    <i class="fi fi-brands-whatsapp"></i> <!-- Ícone do Font Awesome -->
-  </div>
-  <div class="contact-details">
-    <h3>WhatsApp</h3>
-    <a href="https://wa.me/5545999235688" target="_blank">(45) 99923-5688</a>
-  </div>
-</div>
-        
         <div class="contact-method">
-          <div class="contact-icon">📧</div>
+          <div class="contact-icon">
+            <i class="fab fa-whatsapp"></i> <!-- Alterado para Font Awesome -->
+          </div>
           <div class="contact-details">
-            <h3>E-mail</h3>
-            <a href="mailto:contato@chamati.net">contato@chamati.net
-</a>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/5545999235688" target="_blank">(45) 99923-5688</a>
           </div>
         </div>
+        
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i> <!-- Alterado para ícone Font Awesome -->
+          </div>
+          <div class="contact-details">
+            <h3>E-mail</h3>
+            <a href="mailto:contato@chamati.net">contato@chamati.net</a>
+          </div>
         </div>
       </div>
     </div>
