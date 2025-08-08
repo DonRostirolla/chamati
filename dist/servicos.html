@@ -211,37 +211,29 @@
     Scripts JavaScript
     - Colocados no final do body para melhor performance
   -->
-  <script>
-    /**
-     * Carrega a toolbar de forma dinâmica
-     * - Fetch: Busca o conteúdo do arquivo toolbar.html
-     * - Manipulação DOM: Insere a toolbar no container
-     * - Ativa link ativo: Destaca o link correspondente à página atual
-     */
+<script>
     document.addEventListener('DOMContentLoaded', function() {
       fetch('toolbar.html')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Falha ao carregar a toolbar');
-          }
-          return response.text();
-        })
+        .then(response => response.text())
         .then(html => {
           document.getElementById('navbar-container').innerHTML = html;
-          
-          // Ativa o link ativo na toolbar
+
+          // Ativa link ativo
           const currentPage = window.location.pathname.split('/').pop();
           document.querySelectorAll('.nav-button').forEach(link => {
             if (link.getAttribute('href').includes(currentPage)) {
               link.classList.add('active');
             }
           });
+
+          // 🚀 Ajusta o espaço para o conteúdo
+          const toolbar = document.querySelector('.toolbar');
+          if (toolbar) {
+            document.body.style.paddingTop = toolbar.offsetHeight + 'px';
+          }
         })
-        .catch(error => {
-          console.error('Erro ao carregar toolbar:', error);
-          // Fallback: Exibe mensagem ou toolbar básica
-        });
+        .catch(error => console.error('Erro ao carregar toolbar:', error));
     });
-  </script>
+</script>
 </body>
 </html>
