@@ -1,11 +1,20 @@
-/* css/toolbar.css */
+/* css/toolbar.css - Versão Otimizada */
+:root {
+  --toolbar-height: 60px;
+  --toolbar-bg: #137a7f;
+  --whatsapp-green: #25D366;
+  --icon-size: 1.5rem;
+  --transition-speed: 0.3s;
+}
+
 /* ===== ESTRUTURA PRINCIPAL ===== */
 .toolbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #137a7f; /* Verde principal */
+  height: var(--toolbar-height);
+  background-color: var(--toolbar-bg);
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -15,44 +24,59 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 0 1.5rem;
 }
 
 /* ===== BOTÃO DO LOGO ===== */
 .toolbar__logo-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.toolbar__logo-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .toolbar__logo-icon {
   width: 32px;
   height: 32px;
-  transition: transform 0.3s ease;
+  object-fit: contain;
+  transition: transform var(--transition-speed) ease;
 }
 
 .toolbar__logo-button:hover .toolbar__logo-icon {
-  transform: scale(1.1);
+  transform: rotate(-5deg) scale(1.1);
+}
+
+.toolbar__button-text {
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 /* ===== LINKS CENTRAIS ===== */
 .toolbar__links-container {
   display: flex;
-  gap: 1rem;
-  flex-grow: 1;
-  justify-content: center;
+  gap: 0.5rem;
+  height: 100%;
 }
 
 .toolbar__button {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
+  height: 100%;
   color: white;
   text-decoration: none;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
+  position: relative;
 }
 
 .toolbar__button:hover {
@@ -60,22 +84,42 @@
 }
 
 .toolbar__icon {
-  font-size: 1.4rem;
+  font-size: var(--icon-size);
   margin-bottom: 0.25rem;
+  transition: transform var(--transition-speed) ease;
 }
 
-/* Ícone do WhatsApp específico */
+.toolbar__button:hover .toolbar__icon {
+  transform: translateY(-2px);
+}
+
+/* Ícone do WhatsApp */
 .whatsapp-icon {
-  color: #25D366; /* Verde WhatsApp */
+  color: var(--whatsapp-green);
+}
+
+/* Indicador de página ativa */
+.nav-button.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-light);
 }
 
 /* ===== BARRA DECORATIVA INFERIOR ===== */
 .title-bar {
   height: 3px;
   background: linear-gradient(90deg, 
-    #86cecb,  /* primary-light */
-    #e12885,  /* secondary */
-    #86cecb);
+    var(--primary-light),
+    var(--secondary),
+    var(--primary-light));
   background-size: 200% auto;
   animation: shine 3s linear infinite;
 }
@@ -86,23 +130,48 @@
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+  :root {
+    --toolbar-height: auto;
+    --icon-size: 1.3rem;
+  }
+  
   .toolbar__nav {
     flex-direction: column;
     padding: 0.5rem;
   }
   
+  .toolbar__logo-button {
+    padding: 0.75rem;
+  }
+  
   .toolbar__links-container {
     width: 100%;
     justify-content: space-around;
-    margin-top: 0.5rem;
+    padding: 0.5rem 0;
   }
   
   .toolbar__button {
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
     font-size: 0.8rem;
+    flex-grow: 1;
   }
   
   .toolbar__button-text {
-    display: none; /* Oculta texto em mobile */
+    font-size: 0.75rem;
+  }
+  
+  .nav-button.active::after {
+    height: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar__button-text {
+    display: none;
+  }
+  
+  .toolbar__icon {
+    margin-bottom: 0;
+    font-size: 1.4rem;
   }
 }
