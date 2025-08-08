@@ -1,86 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato - Chama a TI</title>
-  <!-- Carrega TODOS os CSS necessários -->
+  <title>Contato - Chama TI</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/contato.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="icon" href="assets/TI.png" type="image/png">
 </head>
 <body>
-  <!-- Container vazio para a toolbar -->
   <div id="navbar-container"></div>
 
   <main class="contact-container">
-  <!-- CONTEUDO PRINCIPAL -->
-  <main class="contact-container">
-    <!-- Título da seção de contato -->
     <h1 class="contact-title">Fale Conosco</h1>
     
-    <!-- Container do formulário incorporado -->
     <div class="form-wrapper">
-      <iframe 
-        src="https://operacoes.notion.site/ebd/24599592ccdf8066876fe24e458b5566" 
-        width="100%" 
-        height="800"
-        frameborder="0" 
-        allowfullscreen
-        class="notion-form">
-      </iframe>
+      <iframe src="https://operacoes.notion.site/ebd/24599592ccdf8066876fe24e458b5566" 
+              class="notion-form"
+              title="Formulário de Contato"></iframe>
     </div>
     
-    <!-- Container para informações de contato -->
-    <div class="contact-info-wrapper">
-      <div class="contact-info">
-        <h2>Outras Formas de Contato</h2>
-        
-        <div class="contact-method">
-          <div class="contact-icon">📱</div>
-          <div class="contact-details">
-            <h3>WhatsApp</h3>
-            <a href="https://wa.me/5545999235688" target="_blank">(45) 99923-5688</a>
-          </div>
+    <div class="contact-info">
+      <h2>Outras Formas de Contato</h2>
+      <div class="contact-method">
+        <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+        <div class="contact-details">
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/5545999235688" target="_blank">(45) 99923-5688</a>
         </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">📧</div>
-          <div class="contact-details">
-            <h3>E-mail</h3>
-            <a href="mailto:contato@chamati.net">contato@chamati.net
-</a>
-          </div>
-        </div>
+      </div>
+      <div class="contact-method">
+        <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+        <div class="contact-details">
+          <h3>E-mail</h3>
+          <a href="mailto:contato@chamati.net">contato@chamati.net</a>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Script de importação MELHORADO -->
+  <a href="https://wa.me/5545999235688" class="help-button">
+    <i class="bi bi-question-circle"></i>
+    <span>Ajuda</span>
+  </a>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       fetch('toolbar.html')
-        .then(response => response.text())
+        .then(response => {
+          if (!response.ok) throw new Error('Falha ao carregar a toolbar');
+          return response.text();
+        })
         .then(html => {
           document.getElementById('navbar-container').innerHTML = html;
-          
-          // Ativa link ativo
-          const currentPage = window.location.pathname.split('/').pop();
-          document.querySelectorAll('.nav-button').forEach(link => {
-            if (link.getAttribute('href').includes(currentPage)) {
-              link.classList.add('active');
-            }
-          });
-          
-          // Força recálculo de estilos
-          document.body.offsetHeight;
+          document.querySelector('.toolbar__button[href*="contato.html"]').classList.add('active');
         })
-        .catch(error => console.error('Erro ao carregar toolbar:', error));
+        .catch(error => {
+          console.error('Erro ao carregar toolbar:', error);
+          document.getElementById('navbar-container').innerHTML = `
+            <div class="toolbar-fallback">
+              <a href="index.html">Home</a>
+              <a href="servicos.html">Serviços</a>
+              <a href="contato.html" class="active">Contato</a>
+            </div>
+          `;
+        });
     });
   </script>
-
-  <!-- Botão de ajuda flutuante -->
-  <a class="help-button" href="https://chamati.net">Ajuda</a>
 </body>
 </html>
