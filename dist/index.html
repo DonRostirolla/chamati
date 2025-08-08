@@ -16,30 +16,42 @@
   <!-- Ícones do Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   
-  <!-- Favicon da aba do navegador -->
+  <!-- Favicon -->
   <link rel="icon" href="assets/TI.png" type="image/png">
 
-  <!-- Font Awesome icones-->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <style>
+    /* Ajuste global para evitar excesso de espaço */
+    body {
+      margin: 0;
+    }
+    #navbar-container {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR: carregada dinamicamente via JavaScript -->
+  <!-- NAVBAR carregada dinamicamente -->
   <div id="navbar-container"></div>
 
-  <!-- CONTEÚDO PRINCIPAL (SEÇÃO SOBRE) -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <main class="main-content">
     <div class="main-container">
       <div class="hero-container">
 
-        <!-- IMAGEM (lado esquerdo) -->
+        <!-- IMAGEM -->
         <div class="hero-image-container">
           <img src="assets/chamati.png" alt="Chama TI" class="hero-image">
         </div>
 
-        <!-- TEXTO (lado direito) -->
+        <!-- TEXTO -->
         <div class="hero-text">
           <h1>Sobre</h1>
           <p>
@@ -47,9 +59,7 @@
             Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis
             e bem documentados — prontos para crescer junto com nossos clientes.
           </p>
-
-          <!-- BOTÃO DE CONTATO -->
-          <a href="contato.html" style="display: inline-block; background-color: #2c3e50; color: white; padding: 12px 25px; border-radius: 5px; margin-top: 20px;">
+          <a href="contato.html" style="display:inline-block;background-color:#2c3e50;color:white;padding:12px 25px;border-radius:5px;margin-top:20px;">
             Entre em Contato
           </a>
         </div>
@@ -58,63 +68,43 @@
     </div>
   </main>
 
-  <!-- BOTÃO FIXO DE WHATSAPP (ajuda rápida) -->
+  <!-- BOTÃO FIXO WHATSAPP -->
   <a href="https://wa.me/5545999235688" class="help-button">
     <i class="bi bi-whatsapp"></i>
     <span>Precisa de ajuda?</span>
   </a>
 
-  <!-- SCRIPT PARA CARREGAR TOOLBAR DINAMICAMENTE -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('toolbar.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Toolbar não encontrada');
-      return response.text();
-    })
-    .then(html => {
-      const navbarContainer = document.getElementById('navbar-container');
-      if (!navbarContainer) return;
-      
-      navbarContainer.innerHTML = html;
+  <!-- SCRIPT TOOLBAR -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('toolbar.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Toolbar não encontrada');
+        return response.text();
+      })
+      .then(html => {
+        const navbarContainer = document.getElementById('navbar-container');
+        navbarContainer.innerHTML = html;
 
-      // Função para ajustar padding da toolbar
-      function ajustarPaddingToolbar() {
+        // Ajuste do padding
         const toolbar = document.querySelector('.toolbar');
         if (toolbar) {
           document.body.style.paddingTop = toolbar.offsetHeight + 'px';
         }
-      }
 
-      // Espera o carregamento total da página (incluindo ícones e fontes)
-      window.addEventListener('load', ajustarPaddingToolbar);
-      window.addEventListener('resize', ajustarPaddingToolbar);
-
-      // Marcação de página ativa
-      setTimeout(() => {
+        // Marcar página ativa
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const navButtons = document.querySelectorAll('.nav-button');
-        
-        navButtons.forEach(button => {
-          try {
-            const buttonPath = button.getAttribute('href').split('/').pop();
-            button.classList.remove('active');
-            
-            if (currentPath === buttonPath || 
-                (currentPath === '' && buttonPath === 'index.html')) {
-              button.classList.add('active');
-            }
-          } catch (e) {
-            console.warn('Erro ao processar botão:', button, e);
-          }
+        document.querySelectorAll('.nav-button').forEach(button => {
+          const buttonPath = button.getAttribute('href').split('/').pop();
+          button.classList.toggle('active', currentPath === buttonPath || 
+            (currentPath === '' && buttonPath === 'index.html'));
         });
-      }, 100);
-    })
-    .catch(error => {
-      console.error('Erro ao carregar toolbar:', error);
-      document.body.style.paddingTop = '60px'; // Fallback
-    });
-});
-</script>
+      })
+      .catch(error => {
+        console.error('Erro ao carregar toolbar:', error);
+        document.body.style.paddingTop = '60px';
+      });
+  });
+  </script>
 </body>
 </html>
