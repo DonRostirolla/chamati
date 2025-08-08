@@ -1,68 +1,201 @@
-/* Toolbar geral */
+/* css/toolbar.css - Versão Otimizada */
+:root {
+  --toolbar-height: 60px;
+  --toolbar-bg: #137a7f;
+  --whatsapp-green: #25D366;
+  --icon-size: 1.5rem;
+  --transition-speed: 0.3s;
+}
+
+/* ===== ESTRUTURA PRINCIPAL ===== */
 .toolbar {
-  background-color: var(--verde-petroleo, #137a7f);
-  padding: 0.6rem 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
+  background-color: #137a7f; /* verde petróleo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* altura fina */
+  min-height: 60px;
   z-index: 1000;
+  padding: 0;
+  margin: 0;
 }
 
 .toolbar__nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.toolbar__logo-button img {
-  height: 40px;
-  width: auto;
-  transition: transform 0.2s ease;
+/* ===== BOTÃO DO LOGO ===== */
+.toolbar__logo-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all var(--transition-speed) ease;
 }
 
-.toolbar__logo-button img:hover {
-  transform: scale(1.05);
+.toolbar__logo-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Links centrais */
+.toolbar__logo-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform var(--transition-speed) ease;
+}
+
+.toolbar__logo-button:hover .toolbar__logo-icon {
+  transform: rotate(-5deg) scale(1.1);
+}
+
+.toolbar__button-text {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* ===== LINKS CENTRAIS ===== */
 .toolbar__links-container {
   display: flex;
-  gap: 1.2rem;
-  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
 }
 
 .toolbar__button {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: 500;
+  padding: 0 1rem;
+  height: 100%;
+  color: white;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  white-space: nowrap;
+  transition: all var(--transition-speed) ease;
+  position: relative;
 }
 
 .toolbar__button:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
 }
 
 .toolbar__icon {
-  font-size: 1.1rem;
+  font-size: var(--icon-size);
+  margin-bottom: 0.25rem;
+  transition: transform var(--transition-speed) ease;
 }
 
-/* Ícones específicos */
+.toolbar__button:hover .toolbar__icon {
+  transform: translateY(-2px);
+}
+
+/* Ícone do WhatsApp */
 .whatsapp-icon {
-  color: #25d366;
+  color: var(--whatsapp-green);
 }
 
-/* Responsivo */
+/* Indicador de página ativa */
+.nav-button.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-light);
+}
+
+.nav-button {
+  color: white;
+  text-decoration: none;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.nav-button i {
+  font-size: 16px;
+}
+
+.nav-button:hover,
+.nav-button.active {
+  background-color: #0f5f63;
+}
+
+/* ===== BARRA DECORATIVA INFERIOR ===== */
+.title-bar {
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--primary-light),
+    var(--secondary),
+    var(--primary-light));
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+  :root {
+    --toolbar-height: auto;
+    --icon-size: 1.3rem;
+  }
+  
+  .toolbar__nav {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  
+  .toolbar__logo-button {
+    padding: 0.75rem;
+  }
+  
   .toolbar__links-container {
-    display: none; /* Aqui entraria um menu hamburguer depois */
+    width: 100%;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+  
+  .toolbar__button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    flex-grow: 1;
+  }
+  
+  .toolbar__button-text {
+    font-size: 0.75rem;
+  }
+  
+  .nav-button.active::after {
+    height: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar__button-text {
+    display: none;
+  }
+  
+  .toolbar__icon {
+    margin-bottom: 0;
+    font-size: 1.4rem;
   }
 }
