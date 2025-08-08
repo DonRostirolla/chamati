@@ -45,7 +45,7 @@ body {
 /* Estilo da toolbar (caso toolbar.html falhe ou use fallback local) */
 .toolbar {
   padding: 0 1.5rem;
-  background-color: #86cecb;
+  background-color: #137a7f;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
