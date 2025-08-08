@@ -27,9 +27,7 @@
 <body>
 
   <!-- NAVBAR: carregada dinamicamente via JavaScript -->
-  <div id="navbar-container">
-    <!-- Se preferir deixar um fallback estático aqui dentro, pode manter algo mínimo -->
-  </div>
+  <div id="navbar-container"></div>
 
   <!-- CONTEÚDO PRINCIPAL (SEÇÃO SOBRE) -->
   <main class="main-content">
@@ -79,16 +77,20 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!navbarContainer) return;
       
       navbarContainer.innerHTML = html;
-      
-      // Ajuste seguro do padding
-      setTimeout(() => {
+
+      // Função para ajustar padding da toolbar
+      function ajustarPaddingToolbar() {
         const toolbar = document.querySelector('.toolbar');
         if (toolbar) {
           document.body.style.paddingTop = toolbar.offsetHeight + 'px';
         }
-      }, 50); // Pequeno delay para garantir renderização
-      
-      // Marcação de página ativa segura
+      }
+
+      // Espera o carregamento total da página (incluindo ícones e fontes)
+      window.addEventListener('load', ajustarPaddingToolbar);
+      window.addEventListener('resize', ajustarPaddingToolbar);
+
+      // Marcação de página ativa
       setTimeout(() => {
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
         const navButtons = document.querySelectorAll('.nav-button');
