@@ -81,6 +81,16 @@
   text-decoration: none;
   transition: all var(--transition-speed) ease;
   position: relative;
+}
+
+.toolbar__button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.toolbar__icon {
+  font-size: var(--icon-size);
+  margin-bottom: 0.25rem;
+  transition: transform var(--transition-speed) ease;
 } */
 
 .toolbar__button {
@@ -93,17 +103,22 @@
   padding: 0.6rem 1rem;
   border-radius: 8px;
   font-size: 0.95rem;
-  transition: background-color
+  transition: background-color 0.3s ease;
+  
+  /* Fixar tamanho igual para todos */
+  width: 140px;   /* largura fixa */
+  height: 48px;   /* altura fixa */
+  box-sizing: border-box;
+}
 
 .toolbar__button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .toolbar__icon {
-  font-size: var(--icon-size);
-  margin-bottom: 0.25rem;
-  transition: transform var(--transition-speed) ease;
+  font-size: 1.2rem;
 }
+
 
 .toolbar__button:hover .toolbar__icon {
   transform: translateY(-2px);
