@@ -6,69 +6,41 @@
   <meta name="description" content="Chama TI - Soluções em Tecnologia da Informação">
   <title>Chama TI - Suporte Especializado em TI</title>
   
-  <!-- CSS externo -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/toolbar.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css"> <!-- estilos gerais -->
+  <link rel="stylesheet" href="css/home.css">   <!-- estilos da home -->
+  <link rel="stylesheet" href="css/toolbar.css"> <!-- estilos da toolbar -->
 
-  <!-- CSS específico da home -->
-  <link rel="stylesheet" href="css/home.css">
-
-  <!-- Ícones do Bootstrap -->
+  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="assets/TI.png" type="image/png">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    /* Ajuste global para evitar excesso de espaço */
-    body {
-      margin: 0;
-    }
-    #navbar-container {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-  </style>
 </head>
-
 <body>
 
-  <!-- NAVBAR carregada dinamicamente -->
+  <!-- NAVBAR -->
   <div id="navbar-container"></div>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="main-content">
-    <div class="main-container">
-      <div class="hero-container">
-
-        <!-- IMAGEM -->
-        <div class="hero-image-container">
-          <img src="assets/chamati.png" alt="Chama TI" class="hero-image">
-        </div>
-
-        <!-- TEXTO -->
-        <div class="hero-text">
-          <h1>Sobre</h1>
-          <p>
-            A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação.
-            Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis
-            e bem documentados — prontos para crescer junto com nossos clientes.
-          </p>
-          <a href="contato.html" style="display:inline-block;background-color:#2c3e50;color:white;padding:12px 25px;border-radius:5px;margin-top:20px;">
-            Entre em Contato
-          </a>
-        </div>
-
+  <!-- CONTEÚDO -->
+  <main class="main-content" style="padding-top: 40px;">
+    <div class="hero-container">
+      <div class="hero-image-container">
+        <img src="assets/chamati.png" alt="Chama TI" class="hero-image">
+      </div>
+      <div class="hero-text">
+        <h1>Sobre</h1>
+        <p>
+          A Chama TI é uma empresa especializada em soluções completas de infraestrutura e tecnologia da informação.
+          Atuamos com foco em qualidade, segurança, performance e clareza, sempre buscando entregar ambientes estáveis
+          e bem documentados — prontos para crescer junto com nossos clientes.
+        </p>
+        <a href="contato.html" class="btn-contato">Entre em Contato</a>
       </div>
     </div>
   </main>
 
-  <!-- BOTÃO FIXO WHATSAPP -->
+  <!-- BOTÃO WHATSAPP -->
   <a href="https://wa.me/5545999235688" class="help-button">
     <i class="bi bi-whatsapp"></i>
     <span>Precisa de ajuda?</span>
@@ -78,31 +50,17 @@
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     fetch('toolbar.html')
-      .then(response => {
-        if (!response.ok) throw new Error('Toolbar não encontrada');
-        return response.text();
-      })
+      .then(response => response.text())
       .then(html => {
-        const navbarContainer = document.getElementById('navbar-container');
-        navbarContainer.innerHTML = html;
+        document.getElementById('navbar-container').innerHTML = html;
 
-        // Ajuste do padding
-        const toolbar = document.querySelector('.toolbar');
-        if (toolbar) {
-          document.body.style.paddingTop = toolbar.offsetHeight + 'px';
-        }
-
-        // Marcar página ativa
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-button').forEach(button => {
-          const buttonPath = button.getAttribute('href').split('/').pop();
-          button.classList.toggle('active', currentPath === buttonPath || 
-            (currentPath === '' && buttonPath === 'index.html'));
+        // marcar ativo
+        const current = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-button').forEach(btn => {
+          if (btn.getAttribute('href').includes(current)) {
+            btn.classList.add('active');
+          }
         });
-      })
-      .catch(error => {
-        console.error('Erro ao carregar toolbar:', error);
-        document.body.style.paddingTop = '60px';
       });
   });
   </script>
