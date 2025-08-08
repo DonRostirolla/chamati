@@ -107,13 +107,13 @@
 }
 
 /* Estilos específicos para ícones */
-.fa-whatsapp {
-  color: #25D366; /* Verde WhatsApp */
-}
+/* .fa-whatsapp {
+  color: #25D366; Verde WhatsApp */
+/* }
 
 .fa-envelope {
-  color: #EA4335; /* Vermelho Gmail */
-}
+  color: #EA4335; Vermelho Gmail */
+/* } */
 
 .contact-details h3 {
   color: var(--white);
