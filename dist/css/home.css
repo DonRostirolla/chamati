@@ -135,7 +135,7 @@ a {
       max-width: 100%;
       height: auto;
       mix-blend-mode: multiply; /* permite que o fundo fique transparente se houver */
-    } */
+    /* } */ 
 
     /* Texto à direita da imagem */
     /* .hero-text {
