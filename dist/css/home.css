@@ -85,28 +85,6 @@ a {
   z-index: 100;
 }
 
-/* Corrige a toolbar */
-#navbar-container {
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: #137a7f; /* Cor verde da Chama TI */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Ajuste do conteúdo principal */
-.main-container {
-  margin-top: 80px; /* Altura da toolbar */
-  padding-top: 20px;
-}
-
-/* Corrige o vazamento horizontal */
-body {
-  overflow-x: hidden;
-}
-
 /* Layout responsivo para telas menores */
 @media (max-width: 768px) {
   .hero-container {
