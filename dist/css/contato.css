@@ -1,4 +1,12 @@
-/* contato.css completo */
+/* contato.css - Versão otimizada */
+:root {
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --transition-normal: all 0.3s ease;
+}
+
 .contact-container {
   width: 100%;
   max-width: 1200px;
@@ -39,22 +47,17 @@
   gap: 3rem;
 }
 
-@media (min-width: 992px) {
-  .contact-content {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
 .form-wrapper {
   background: var(--white);
   border-radius: var(--radius-xl);
   padding: 2.5rem;
   box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
 }
 
 .notion-form {
   width: 100%;
-  height: 700px;
+  min-height: 700px;
   border: none;
   border-radius: var(--radius-lg);
 }
@@ -62,7 +65,6 @@
 .contact-info-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 }
 
 .contact-info {
@@ -97,10 +99,20 @@
 }
 
 .contact-icon {
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: var(--primary-light);
   min-width: 40px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos específicos para ícones */
+.fa-whatsapp {
+  color: #25D366; /* Verde WhatsApp */
+}
+
+.fa-envelope {
+  color: #EA4335; /* Vermelho Gmail */
 }
 
 .contact-details h3 {
@@ -109,11 +121,11 @@
   font-size: 1.3rem;
 }
 
-.contact-details p, 
 .contact-details a {
   color: var(--gray-200);
   text-decoration: none;
   transition: var(--transition-normal);
+  display: inline-block;
 }
 
 .contact-details a:hover {
@@ -121,7 +133,27 @@
   text-decoration: underline;
 }
 
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
 /* Responsividade */
+@media (min-width: 992px) {
+  .contact-content {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .form-wrapper {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-container {
     margin-top: 5rem;
@@ -137,7 +169,7 @@
   }
   
   .notion-form {
-    height: 600px;
+    min-height: 600px;
   }
   
   .contact-method {
