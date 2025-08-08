@@ -1,22 +1,23 @@
 <!-- toolbar.html -->
 <header class="toolbar">
-  <!-- Font Awesome icones-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <nav class="toolbar__nav" aria-label="Navegação principal">
-    <div class="toolbar__logo-container">
-      <a href="index.html" class="toolbar__logo-link" aria-label="Página Inicial">
-        <img src="assets/TIcon.svg" alt="Chama TI" class="toolbar__logo-img" width="40" height="40" loading="eager">
+    <!-- Botão do Logo (agora dentro do container central) -->
+    <div class="toolbar__logo-button">
+      <a href="index.html" class="toolbar__button" aria-label="Página Inicial">
+        <img src="assets/chamati.png" alt="Chama TI" class="toolbar__logo-icon" width="32" height="32">
+        <span class="toolbar__button-text">Início</span>
       </a>
     </div>
-    
+
+    <!-- Botões centralizados -->
     <div class="toolbar__links-container">
       <a href="https://wa.me/5545999235688" class="toolbar__button nav-button" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i class="bi bi-whatsapp toolbar__icon"></i>
+        <i class="fab fa-whatsapp toolbar__icon whatsapp-icon"></i>
         <span class="toolbar__button-text">WhatsApp</span>
       </a>
       
       <a href="servicos.html" class="toolbar__button nav-button" aria-label="Serviços">
-        <i class="fi fi-br-settings-sliders"></i>
+        <i class="bi bi-layout-wtf toolbar__icon"></i>
         <span class="toolbar__button-text">Serviços</span>
       </a>
       
@@ -25,21 +26,6 @@
         <span class="toolbar__button-text">Contato</span>
       </a>
     </div>
-    
-    <div class="toolbar__empty-space"></div>
   </nav>
   <div class="title-bar" aria-hidden="true"></div>
 </header>
-
-<script>
-  // Script para o menu de idiomas
-  document.querySelector('.language-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    const menu = this.nextElementSibling;
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-    
-    this.setAttribute('aria-expanded', !isExpanded);
-    menu.classList.toggle('visible');
-    this.querySelector('.bi-chevron-down').classList.toggle('rotate');
-  });
-</script>
