@@ -65,28 +65,28 @@
 
   <!-- Script de importação MELHORADO -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      fetch('toolbar.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('navbar-container').innerHTML = html;
-          
-          // Ativa link ativo
-          const currentPage = window.location.pathname.split('/').pop();
-          document.querySelectorAll('.nav-button').forEach(link => {
-            if (link.getAttribute('href').includes(currentPage)) {
-              link.classList.add('active');
-            }
-          });
-          
-          // Força recálculo de estilos
-          document.body.offsetHeight;
-        })
-        .catch(error => console.error('Erro ao carregar toolbar:', error));
-    });
-  </script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('toolbar.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
 
-  <!-- Botão de ajuda flutuante -->
-  <a class="help-button" href="https://chamati.net">Ajuda</a>
+      // Ativa link ativo
+      const currentPage = window.location.pathname.split('/').pop();
+      document.querySelectorAll('.nav-button').forEach(link => {
+        if (link.getAttribute('href').includes(currentPage)) {
+          link.classList.add('active');
+        }
+      });
+
+      // 🚀 Ajusta o espaço para o conteúdo
+      const toolbar = document.querySelector('.toolbar');
+      if (toolbar) {
+        document.body.style.paddingTop = toolbar.offsetHeight + 'px';
+      }
+    })
+    .catch(error => console.error('Erro ao carregar toolbar:', error));
+});
+</script>
 </body>
 </html>
