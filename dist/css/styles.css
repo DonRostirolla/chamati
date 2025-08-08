@@ -194,6 +194,10 @@ img {
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
 }
+.toolbar__logo-icon {
+  filter: brightness(0) invert(1); /* Faz o logo ficar branco */
+  transition: transform 0.3s ease;
+}
 
 .toolbar__button-text {
   font-size: 0.875rem;
