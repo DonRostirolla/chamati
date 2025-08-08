@@ -70,39 +70,25 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetch('toolbar.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Falha ao carregar a toolbar');
-      return response.text();
-    })
+    .then(response => response.text())
     .then(html => {
-      // Insere a toolbar
-      const navbarContainer = document.getElementById('navbar-container');
-      navbarContainer.innerHTML = html;
+      document.getElementById('navbar-container').innerHTML = html;
 
-      // Ajusta o padding do body
-      const toolbarHeight = document.querySelector('.toolbar').offsetHeight;
-      document.body.style.paddingTop = `${toolbarHeight}px`;
-
-      // Marca a página ativa (versão robusta)
-      const currentPath = window.location.pathname;
+      // Ativa link ativo
+      const currentPage = window.location.pathname.split('/').pop();
       document.querySelectorAll('.nav-button').forEach(link => {
-        const linkPath = link.getAttribute('href');
-        
-        // Remove a classe 'active' de todos os links primeiro
-        link.classList.remove('active');
-        
-        // Verifica se o link corresponde à página atual
-        if (currentPath.endsWith(linkPath) || 
-            (linkPath === 'index.html' && (currentPath === '/' || currentPath.endsWith('index.html')))) {
+        if (link.getAttribute('href').includes(currentPage)) {
           link.classList.add('active');
         }
       });
+
+      // Ajusta o espaço para o conteúdo
+      const toolbar = document.querySelector('.toolbar');
+      if (toolbar) {
+        document.body.style.paddingTop = toolbar.offsetHeight + 'px';
+      }
     })
-    .catch(error => {
-      console.error('Erro ao carregar toolbar:', error);
-      // Fallback: Garante que o conteúdo não fique escondido
-      document.body.style.paddingTop = '60px';
-    });
+    .catch(error => console.error('Erro ao carregar toolbar:', error));
 });
 </script>
 </body>
