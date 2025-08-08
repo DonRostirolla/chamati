@@ -124,6 +124,11 @@
   transform: translateY(-2px);
 }
 
+.toolbar__button--logo {
+  font-size: 1.4rem; /* ícone um pouco maior */
+}
+
+
 /* Ícone do WhatsApp */
 .whatsapp-icon {
   color: var(--whatsapp-green);
