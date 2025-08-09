@@ -137,7 +137,7 @@
 .btn-contato {
   display: inline-block;
   background-color: transparent;
-  color: var(--primary-light); /* Azul claro (#86cecb) */
+  color: #373b3e;
   padding: 0.8rem 2rem;
   border-radius: 4px;
   font-weight: 600;
@@ -151,11 +151,6 @@
   background-color: var(--primary-light);
   color: var(--primary-dark); /* Azul escuro (#137a7f) */
   transform: translateY(-2px);
-}
-
-.hero-text .btn-contato {
-  margin: 2rem auto 0; /* Espaçamento superior e centralização */
-  display: inline-block; /* Necessário para margin auto funcionar */
 }
 
 @keyframes shine {
