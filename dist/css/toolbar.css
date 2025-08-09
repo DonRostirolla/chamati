@@ -35,8 +35,8 @@
 
 /* Ajuste específico para o ícone do logo (se ele for muito grande/pequeno) */
 .toolbar__logo-icon {
-  width: 28px;  /* Ajuste conforme necessário */
-  height: 28px;
+  width: 36px;  /* Ajuste conforme necessário */
+  height: 36px;
   object-fit: contain;
 }
 
