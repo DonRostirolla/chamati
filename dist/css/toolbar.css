@@ -33,6 +33,30 @@
   padding: 0 1.5rem;
 }
 
+/* Estilo compartilhado por TODOS os botões (incluindo o logo) */
+.toolbar__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+  width: 140px;   /* Largura fixa igual para todos */
+  height: 48px;   /* Altura fixa igual para todos */
+  box-sizing: border-box;
+}
+
+/* Ajuste específico para o ícone do logo (se ele for muito grande/pequeno) */
+.toolbar__logo-icon {
+  width: 24px;  /* Ajuste conforme necessário */
+  height: 24px;
+  object-fit: contain;
+}
+
 .toolbar__button-text {
   font-weight: 500;
   font-size: 0.95rem;
