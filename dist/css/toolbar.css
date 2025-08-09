@@ -150,7 +150,7 @@
 .btn-contato:hover {
   background-color: var(--secondary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(225, 40, 133, 0.4);
+  box-shadow: 0 6px 20px #373b3e;
   border-radius: 0; /* Mantém quadrado no hover */
 }
 
