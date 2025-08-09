@@ -253,16 +253,6 @@ img {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-@media (max-width: 992px) {
-  .toolbar__button-text {
-    font-size: 0.75rem;
-  }
-  
-  .toolbar__icon {
-    font-size: 1.25rem;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-banner {
     flex-direction: column;
@@ -284,41 +274,6 @@ img {
     font-size: 1rem;
   }
 
-  /* Toolbar Mobile */
-  .toolbar {
-    height: auto;
-    padding: 0.5rem;
-  }
-
-  .toolbar__nav {
-    flex-wrap: wrap;
-    padding: 0.5rem;
-  }
-
-  .toolbar__logo-container {
-    order: 1;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
-  }
-
-  .toolbar__links-container {
-    order: 2;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-  }
-
-  .toolbar__empty-space {
-    display: none;
-  }
-
-  .toolbar__button {
-    padding: 0.5rem;
-    min-width: auto;
-  }
-
   .help-button {
     padding: 0.75rem 1.25rem;
     font-size: 0.875rem;
@@ -329,27 +284,6 @@ img {
   }
 }
 
-@media (max-width: 480px) {
-  .toolbar__button-text {
-    display: none;
-  }
-  
-  .toolbar__button {
-    padding: 0.5rem;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-  }
-  
-  .toolbar__icon {
-    margin-bottom: 0;
-  }
-
-  .toolbar__logo-img {
-    height: 35px;
-  }
-}
 
 /* Animações adicionais */
 @keyframes fadeIn {

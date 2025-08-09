@@ -33,8 +33,6 @@
   padding: 0 1.5rem;
 }
 
-
-
 .toolbar__button-text {
   font-weight: 500;
   font-size: 0.95rem;
@@ -46,29 +44,6 @@
   gap: 0.5rem;
   height: 100%;
 }
-
-/* .toolbar__button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-  height: 100%;
-  color: white;
-  text-decoration: none;
-  transition: all var(--transition-speed) ease;
-  position: relative;
-}
-
-.toolbar__button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.toolbar__icon {
-  font-size: var(--icon-size);
-  margin-bottom: 0.25rem;
-  transition: transform var(--transition-speed) ease;
-} */
 
 .toolbar__button {
   display: flex;
@@ -96,12 +71,9 @@
   font-size: 1.2rem;
 }
 
-
 .toolbar__button:hover .toolbar__icon {
   transform: translateY(-2px);
 }
-
-
 
 /* Ícone do WhatsApp */
 .whatsapp-icon {
