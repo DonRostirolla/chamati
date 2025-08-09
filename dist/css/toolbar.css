@@ -49,7 +49,7 @@
 
 .toolbar__logo-icon {
   width: 56px;
-  height: 56px;
+  height: 64px;
   object-fit: contain;
   transition: transform var(--transition-speed) ease;
 }
