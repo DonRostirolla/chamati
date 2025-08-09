@@ -153,6 +153,15 @@
   transform: translateY(-2px);
 }
 
+.hero-text {
+  text-align: center; /* Centraliza todo o conteúdo */
+}
+
+.hero-text .btn-contato {
+  margin: 2rem auto 0; /* Espaçamento superior e centralização */
+  display: inline-block; /* Necessário para margin auto funcionar */
+}
+
 @keyframes shine {
   to { background-position: 200% center; }
 }
