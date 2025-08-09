@@ -252,6 +252,21 @@ img {
   font-size: 1.25rem;
 }
 
+/* Adicione ao styles.css */
+.button--cta {
+  background-color: var(--secondary);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.button--cta:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-2px);
+}
+
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
   .hero-banner {

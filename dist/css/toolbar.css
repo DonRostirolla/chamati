@@ -133,6 +133,26 @@
   animation: shine 3s linear infinite;
 }
 
+/* Alternativa mais sóbria */
+.btn-contato {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary-light); /* Azul claro (#86cecb) */
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-light);
+  margin-top: 1rem;
+}
+
+.btn-contato:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark); /* Azul escuro (#137a7f) */
+  transform: translateY(-2px);
+}
+
 @keyframes shine {
   to { background-position: 200% center; }
 }
