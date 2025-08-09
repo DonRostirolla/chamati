@@ -41,9 +41,6 @@
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
   transition: all var(--transition-speed) ease;
-
-  width: 140px;
-  height: 48px;
 }
 
 .toolbar__logo-button:hover {
