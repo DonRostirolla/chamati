@@ -139,7 +139,7 @@
   background-color: transparent;
   color: var(--primary-light); /* Azul claro (#86cecb) */
   padding: 0.8rem 2rem;
-  border-radius: 50px;
+  border-radius: 4px;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
