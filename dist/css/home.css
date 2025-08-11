@@ -21,8 +21,6 @@ body {
   display: flex;
   gap: 40px;
   align-items: center;
-  min-height: 70vh;
-  padding: 20px 0; /* Reduz espaçamento */
 }
 
 /* Imagem lateral esquerda com efeito de fusão */
