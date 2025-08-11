@@ -87,15 +87,35 @@ a {
 
 /* Seção de Logos de Marcas */
 .brand-logos {
-  background-color: #137a7f; /* match your site theme */
-  padding: 40px 0;
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* pode trocar pela sua paleta */
   text-align: center;
 }
 
 .brand-logos h2 {
-  color: white;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #137a7f; /* verde petróleo da sua paleta */
+  margin-bottom: 30px;
+}
+
+.logos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.logo-item img {
+  max-width: 140px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 .brand-grid {
