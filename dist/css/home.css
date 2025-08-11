@@ -15,14 +15,13 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
-/* ASODUIHASUIHD AUDIHSAUIHDSA ADIUSHADUIHSAD */ 
+
 /* Seção principal com layout flexível */
 .hero-container {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
-  min-height: 0; /* Remove altura mínima fixa */
-  padding: 40px 0; /* Adiciona padding vertical */
+  min-height: 70vh;
 }
 
 /* Imagem lateral esquerda com efeito de fusão */
@@ -33,28 +32,14 @@ body {
 }
 
 .hero-image {
-  max-width: 80%; /* Reduz tamanho da imagem */
-  max-height: 300px; /* Altura máxima */
+  max-width: 100%;
+  height: auto;
   mix-blend-mode: multiply; /* permite que o fundo fique transparente se houver */
 }
 
 /* Texto à direita da imagem */
 .hero-text {
   flex: 1;
-  padding: 20px 0;
-}
-
-.hero-text h1 {
-  font-size: 2rem; /* Reduz tamanho do título */
-  margin-bottom: 15px;
-  color: var(--white);
-}
-
-.hero-text p {
-  font-size: 1rem; /* Reduz tamanho do texto */
-  line-height: 1.5;
-  margin-bottom: 20px;
-  color: var(--white);
 }
 
 /* Estilo da toolbar (caso toolbar.html falhe ou use fallback local) */
@@ -147,8 +132,7 @@ a {
 .logo-carousel {
   overflow: hidden;
   background: #86cecb; 
-  padding: 15px 0;
-  margin-top: 30px; /* Espaço acima do carrossel */
+  padding: 20px 0;
 }
 
 .carousel-track {
@@ -158,7 +142,7 @@ a {
 }
 
 .carousel-track img {
-  height: 40px; /* altura fixa */
+  height: 60px; /* altura fixa */
   width: auto;  /* mantém proporção */
   filter: grayscale(100%);
   opacity: 0.7;
