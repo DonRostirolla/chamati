@@ -47,7 +47,7 @@ body {
   background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
 }
 
 /* Estilo da toolbar (caso toolbar.html falhe ou use fallback local) */
@@ -138,9 +138,11 @@ a {
 }
 
 .logo-carousel {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #86cecb;
   padding: 10px 0;
+  margin-top: 40px; /* distancia para baixo */
 }
 
 .carousel-track {
