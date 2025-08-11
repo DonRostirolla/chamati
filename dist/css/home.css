@@ -85,6 +85,37 @@ a {
   z-index: 100;
 }
 
+.brand-logos {
+  background-color: #137a7f; /* match your site theme */
+  padding: 40px 0;
+  text-align: center;
+}
+
+.brand-logos h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.brand-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.brand-grid img {
+  max-height: 60px; /* adjust size as needed */
+  object-fit: contain;
+  filter: grayscale(100%); /* makes them uniform */
+  transition: filter 0.3s ease;
+}
+
+.brand-grid img:hover {
+  filter: grayscale(0%);
+}
+
+
 /* Layout responsivo para telas menores */
 @media (max-width: 768px) {
   .hero-container {
@@ -98,104 +129,3 @@ a {
     margin-bottom: 30px;
   }
 }
-
-/* <!-- Estilos internos rápidos (apenas para a página) -->
-  <!-- <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    /* Container principal da página */
-    /* .main-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    } */
-
-    /* Seção principal com layout flexível */
-    /* .hero-container {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      min-height: 70vh;
-    } */
-
-    /* Imagem lateral esquerda com efeito de fusão */
-    /* .hero-image-container {
-      flex: 0 0 45%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-image {
-      max-width: 100%;
-      height: auto;
-      mix-blend-mode: multiply; /* permite que o fundo fique transparente se houver */
-    /* } */ 
-
-    /* Texto à direita da imagem */
-    /* .hero-text {
-      flex: 1;
-    } */
-
-    /* Estilo da toolbar (caso toolbar.html falhe ou use fallback local) */
-    /* .toolbar {
-      padding: 15px 20px;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    } */
-
-    /* Título principal */
-    /* h1 {
-      margin-bottom: 25px;
-      font-size: 2.2rem;
-      color: #2c3e50;
-    } */
-
-    /* Texto principal */
-    /* p {
-      margin-bottom: 20px;
-      line-height: 1.7;
-      font-size: 1.1rem;
-    } */
-
-    /* Links padrão */
-    /* a {
-      text-decoration: none;
-      color: inherit;
-    } */
-
-    /* Botão flutuante do WhatsApp */
-    /* .help-button {
-      position: fixed;
-      right: 30px;
-      bottom: 30px;
-      background-color: #25D366;
-      color: white;
-      padding: 15px;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 100;
-    } */
-
-   /* Layout responsivo para telas menores */
-    /* @media (max-width: 768px) {
-      .hero-container {
-        flex-direction: column;
-        padding-top: 30px;
-      }
-
-      .hero-image-container {
-        flex: 1;
-        width: 80%;
-        margin-bottom: 30px;
-      }
-    }
-  </style> --> */
