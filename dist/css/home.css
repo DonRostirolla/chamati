@@ -22,6 +22,8 @@ body {
   gap: 40px;
   align-items: center;
   min-height: 70vh;
+  min-height: 0; /* Remove altura fixa */
+  padding: 20px 0; /* Reduz espaçamento */
 }
 
 /* Imagem lateral esquerda com efeito de fusão */
@@ -33,6 +35,7 @@ body {
 
 .hero-image {
   max-width: 100%;
+  max-height: 200px; /* Controla o tamanho da imagem */
   height: auto;
   mix-blend-mode: multiply; /* permite que o fundo fique transparente se houver */
 }
@@ -132,7 +135,8 @@ a {
 .logo-carousel {
   overflow: hidden;
   background: #86cecb;
-  padding: 20px 0;
+  padding: 10px 0;
+  margin-bottom: 20px; /* Espaço antes do final */
 }
 
 .carousel-track {
@@ -142,7 +146,7 @@ a {
 }
 
 .carousel-track img {
-  height: 60px; /* altura fixa */
+  height: 30px; /* altura fixa */
   width: auto;  /* mantém proporção */
   filter: grayscale(100%);
   opacity: 0.7;
