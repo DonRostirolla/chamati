@@ -202,3 +202,38 @@
     font-size: 1.4rem;
   }
 }
+/* Toolbar responsiva */
+@media (max-width: 768px) {
+  .toolbar__links-container {
+    display: flex;
+    flex-wrap: wrap; /* permite quebrar para outra linha */
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .toolbar__button {
+    font-size: 0.85rem; /* texto menor */
+    padding: 5px 8px;
+  }
+
+  .toolbar__logo-icon {
+    height: 30px; /* logo menor */
+  }
+
+  .toolbar__button i {
+    font-size: 1.2rem; /* ícones menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar__links-container {
+    flex-direction: column; /* uma coluna no celular muito pequeno */
+    align-items: center;
+  }
+
+  .toolbar__button {
+    width: 100%;
+    justify-content: center;
+  }
+}
