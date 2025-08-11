@@ -146,7 +146,8 @@ a {
 }
 
 .logo-carousel {
-  overflow: hidden;
+  overflow-x: hidden; /* Esconde scroll lateral */
+  overflow-y: auto;   /* Permite scroll vertical */
   background: #86cecb;
   padding: 10px 0;
 }
