@@ -38,9 +38,16 @@ body {
   mix-blend-mode: multiply; /* permite que o fundo fique transparente se houver */
 }
 
-/* Texto à direita da imagem */
+/* Container do texto sobre */
 .hero-text {
   flex: 1;
+  max-width: 600px; /* Largura máxima do bloco */
+  padding: 30px;
+  margin: 0 auto; /* Centraliza */
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Estilo da toolbar (caso toolbar.html falhe ou use fallback local) */
