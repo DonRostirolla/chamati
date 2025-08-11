@@ -82,7 +82,7 @@ img {
   align-items: center;
   min-height: calc(100vh - 160px); /* Ajuste da altura */
   padding: 2rem 0;
-  padding-top: 40px; /* Espaço extra no topo */
+  padding-top: 10px; /* Espaço extra no topo */
   flex-direction: column;
   justify-content: center; /* Distribui o espaço */
   overflow: hidden; /* Garante que nada ultrapasse */
