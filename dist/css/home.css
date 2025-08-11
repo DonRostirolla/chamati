@@ -9,6 +9,13 @@ body {
   color: #333;
 }
 
+.main-content {
+  height: calc(100vh - 80px); /* Considera altura da toolbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* Container principal da página */
 .main-container {
   max-width: 1200px;
