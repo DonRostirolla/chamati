@@ -78,7 +78,6 @@ img {
 
 /* ===== LAYOUT PRINCIPAL ===== */
 .main-content {
-  min-height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
   padding: 2rem 0;
