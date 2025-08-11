@@ -112,9 +112,6 @@ a {
   filter: grayscale(100%);
   opacity: 0.7;
   transition: all 0.3s ease;
-  display:flex;
-  justify-content:center;
-  align-items:center;
 }
 
 .logo-item img:hover {
