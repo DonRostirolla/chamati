@@ -1,178 +1,129 @@
-/* home.css - Estilos específicos para a página inicial */
+/* home.css - Versão Aprimorada */
+:root {
+  --toolbar-height: 80px;
+  --primary-color: #137a7f;
+  --secondary-color: #86cecb;
+  --text-color: #333;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+}
 
-/* Estilos migrados do index.html */
+/* Reset e Estilos Base */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  overflow-x: hidden;
 }
 
+/* Layout Principal */
 .main-content {
-  height: calc(100vh - 80px); /* 80px = altura da toolbar */
+  min-height: calc(100vh - var(--toolbar-height));
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribui o espaço */
-  overflow: hidden; /* Garante que nada ultrapasse */
-  padding-top: 80px; /* Espaço extra no topo */
-  min-height: calc(100vh - 160px); /* Ajuste da altura */
+  padding-top: var(--toolbar-height);
 }
 
-/* Container principal da página */
-.main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Seção principal com layout flexível */
+/* Container Hero */
 .hero-container {
   display: flex;
-  gap: 40px;
+  gap: 2rem;
   align-items: center;
-  min-height: 70vh;
-  padding: 20px 0; /* Reduz espaçamento */
+  justify-content: center;
+  padding: 2rem;
+  flex: 1;
 }
 
-/* Imagem lateral esquerda com efeito de fusão */
+/* Seção de Imagem */
 .hero-image-container {
-  flex: 0 0 45%;
+  flex: 0 1 45%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero-image {
   max-width: 100%;
   height: auto;
-  mix-blend-mode: multiply; /* permite que o fundo fique transparente se houver */
+  max-height: 400px;
+  mix-blend-mode: multiply;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
-/* Container do texto sobre */
+/* Seção de Texto */
 .hero-text {
-  flex: 1;
-  max-width: 600px; /* Largura máxima do bloco */
-  padding: 30px;
-  margin: 0 auto; /* Centraliza */
-  background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+  flex: 0 1 50%;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  border-radius: 12px;
+  border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
-/* Ajuste do parágrafo */
-.hero-text p {
-  font-size: 1rem;
-  line-height: 1.6;
+
+.hero-text h1 {
+  font-size: 2.2rem;
   margin-bottom: 1.5rem;
   color: var(--white);
-  text-align: justify; /* ou 'left' se preferir */
-}
-
-/* Estilo da toolbar (caso toolbar.html falhe ou use fallback local) */
-.toolbar {
-  padding: 0 1.5rem;
-  background-color: #137a7f;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Título principal */
-h1 {
-  margin-bottom: 25px;
-  font-size: 2.2rem;
-  color: #2c3e50;
-}
-
-/* Texto principal */
-p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-  font-size: 1.1rem;
-}
-
-/* Links padrão */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Botão flutuante do WhatsApp */
-.help-button {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  background-color: #86cecb;
-  color: white;
-  padding: 15px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 100;
-}
-
-/* Seção de Logos de Marcas */
-.brand-logos {
-  padding: 40px 20px;
-  background-color: #137a7f; 
   text-align: center;
 }
 
-.brand-logos h2 {
-  font-size: 2rem;
-  color: #137a7f; 
-  margin-bottom: 30px;
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: var(--white);
+  text-align: left;
 }
 
-.logo-item img {
-  height: 40px; /* define a altura fixa */
-  width: auto; /* mantém a proporção original */
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
+/* Botão de Contato */
+.btn-contato {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 0.8rem 1.8rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  text-align: center;
 }
 
-.logo-item img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+.btn-contato:hover {
+  background-color: var(--white);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.brand-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.brand-grid img {
-  max-height: 60px; /* adjust size as needed */
-  object-fit: contain;
-  filter: grayscale(100%); /* makes them uniform */
-  transition: filter 0.3s ease;
-}
-
-.brand-grid img:hover {
-  filter: grayscale(0%);
-}
-
+/* Carrossel de Logos */
 .logo-carousel {
-  overflow: hidden;
-  background: #86cecb;
-  padding: 10px 0;
+  background: var(--secondary-color);
+  padding: 1rem 0;
+  margin-top: auto;
 }
 
 .carousel-track {
   display: flex;
-  gap: 40px;
+  gap: 2.5rem;
   animation: scroll 20s linear infinite;
+  padding: 0.5rem 0;
 }
 
 .carousel-track img {
-  height: 30px; /* altura fixa */
-  width: auto;  /* mantém proporção */
+  height: 2.5rem;
+  width: auto;
+  object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.7;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .carousel-track img:hover {
@@ -180,43 +131,94 @@ a {
   opacity: 1;
 }
 
+/* Botão do WhatsApp */
+.help-button {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.help-button:hover {
+  background-color: var(--white);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Animações */
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* Layout responsivo para telas menores */
-  @media (max-width: 768px) {
-  .main-content {
-    padding-top: 60px;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-
+/* Responsividade */
+@media (max-width: 992px) {
   .hero-container {
     flex-direction: column;
-    padding-top: 20px;
-    margin-top: 10px;
+    padding: 1.5rem;
   }
-
-  .hero-image-container {
-    flex: 1;
-    width: 80%;
-    margin-bottom: 30px;
-  }
-}
-/* Para telas grandes */
-@media (min-width: 992px) {
+  
+  .hero-image-container,
   .hero-text {
-    margin-right: 5%; /* Afasta da borda direita */
-    margin-left: 0; /* Alinha à esquerda da imagem */
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .hero-text {
+    margin: 1rem 0;
+    padding: 1.5rem;
+  }
+  
+  .carousel-track {
+    gap: 1.5rem;
   }
 }
 
-/* Para mobile */
 @media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-text p {
+    font-size: 1rem;
+  }
+  
+  .carousel-track img {
+    height: 2rem;
+  }
+  
+  .help-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
   .hero-text {
-    max-width: 90%;
-    padding: 20px;
-    margin: 20px auto; /* Centraliza em mobile */
+    padding: 1rem;
+  }
+  
+  .btn-contato {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .help-button span {
+    display: none;
   }
 }
