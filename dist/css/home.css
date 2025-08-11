@@ -176,10 +176,16 @@ a {
 }
 
 /* Layout responsivo para telas menores */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
+  .main-content {
+    padding-top: 60px;
+  }
+
+
   .hero-container {
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 20px;
+    margin-top: 10px;
   }
 
   .hero-image-container {

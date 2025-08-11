@@ -80,7 +80,9 @@ img {
 .main-content {
   display: flex;
   align-items: center;
+  min-height: calc(100vh - 160px); /* Ajuste da altura */
   padding: 2rem 0;
+  padding-top: 80px; /* Espaço extra no topo */
   height: calc(100vh - 80px); /* 80px = altura da toolbar */
   flex-direction: column;
   justify-content: space-between; /* Distribui o espaço */
