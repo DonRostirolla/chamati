@@ -131,7 +131,7 @@ a {
 
 .logo-carousel {
   overflow: hidden;
-  background: #fff; /* ou transparente */
+  background: #86cecb; 
   padding: 20px 0;
 }
 
@@ -158,8 +158,6 @@ a {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-
 
 /* Layout responsivo para telas menores */
 @media (max-width: 768px) {
