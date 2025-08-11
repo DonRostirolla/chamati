@@ -10,10 +10,11 @@ body {
 }
 
 .main-content {
-  height: calc(100vh - 80px); /* Considera altura da toolbar */
+  height: calc(100vh - 80px); /* 80px = altura da toolbar */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Distribui o espaço */
+  overflow: hidden; /* Garante que nada ultrapasse */
 }
 
 /* Container principal da página */
