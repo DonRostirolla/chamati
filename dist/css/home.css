@@ -1,48 +1,52 @@
-/* home.css - Versão Aprimorada */
+/* home.css - Versão Otimizada */
 :root {
   --toolbar-height: 80px;
-  --primary-color: #137a7f;
-  --secondary-color: #86cecb;
-  --text-color: #333;
+  --primary: #137a7f;
+  --primary-light: #86cecb;
+  --secondary: #e12885;
   --white: #ffffff;
   --transition: all 0.3s ease;
 }
 
-/* Reset e Estilos Base */
+/* Reset básico */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--primary-color);
-  overflow-x: hidden;
+  color: #333;
 }
 
-/* Layout Principal */
+/* Layout principal */
 .main-content {
   min-height: calc(100vh - var(--toolbar-height));
   display: flex;
   flex-direction: column;
   padding-top: var(--toolbar-height);
+  overflow-x: hidden;
 }
 
-/* Container Hero */
+/* Container principal */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Seção hero */
 .hero-container {
   display: flex;
-  gap: 2rem;
+  gap: 40px;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  padding: 40px 20px;
   flex: 1;
 }
 
-/* Seção de Imagem */
+/* Imagem */
 .hero-image-container {
   flex: 0 1 45%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .hero-image {
@@ -51,19 +55,17 @@ body {
   max-height: 400px;
   mix-blend-mode: multiply;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
-/* Seção de Texto */
+/* Texto sobre */
 .hero-text {
   flex: 0 1 50%;
   max-width: 600px;
-  padding: 2rem;
+  padding: 30px;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  border-radius: 1rem;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text h1 {
@@ -78,49 +80,42 @@ body {
   line-height: 1.7;
   margin-bottom: 2rem;
   color: var(--white);
-  text-align: left;
 }
 
-/* Botão de Contato */
+/* Botão de contato */
 .btn-contato {
   display: inline-block;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-light);
   color: var(--white);
-  padding: 0.8rem 1.8rem;
-  border-radius: 2rem;
+  padding: 12px 25px;
+  border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
-  border: none;
-  cursor: pointer;
-  text-align: center;
 }
 
 .btn-contato:hover {
   background-color: var(--white);
-  color: var(--primary-color);
+  color: var(--primary);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Carrossel de Logos */
+/* Carrossel de logos */
 .logo-carousel {
-  background: var(--secondary-color);
-  padding: 1rem 0;
+  background: var(--primary-light);
+  padding: 15px 0;
   margin-top: auto;
 }
 
 .carousel-track {
   display: flex;
-  gap: 2.5rem;
+  gap: 40px;
   animation: scroll 20s linear infinite;
-  padding: 0.5rem 0;
 }
 
 .carousel-track img {
-  height: 2.5rem;
+  height: 30px;
   width: auto;
-  object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.7;
   transition: var(--transition);
@@ -131,28 +126,26 @@ body {
   opacity: 1;
 }
 
-/* Botão do WhatsApp */
+/* Botão WhatsApp */
 .help-button {
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  background-color: var(--secondary-color);
+  right: 30px;
+  bottom: 30px;
+  background-color: var(--primary-light);
   color: var(--white);
-  padding: 1rem 1.5rem;
-  border-radius: 3rem;
+  padding: 15px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 100;
   transition: var(--transition);
-  text-decoration: none;
 }
 
 .help-button:hover {
   background-color: var(--white);
-  color: var(--primary-color);
-  transform: translateY(-3px);
+  color: var(--primary);
 }
 
 /* Animações */
@@ -162,30 +155,25 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(1rem); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Responsividade */
 @media (max-width: 992px) {
   .hero-container {
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 30px 15px;
   }
   
-  .hero-image-container,
+  .hero-image {
+    max-height: 300px;
+    margin-bottom: 20px;
+  }
+  
   .hero-text {
-    flex: 1 1 100%;
     max-width: 100%;
-  }
-  
-  .hero-text {
-    margin: 1rem 0;
-    padding: 1.5rem;
-  }
-  
-  .carousel-track {
-    gap: 1.5rem;
+    padding: 20px;
   }
 }
 
@@ -198,27 +186,45 @@ body {
     font-size: 1rem;
   }
   
+  .carousel-track {
+    gap: 25px;
+    animation: scroll 25s linear infinite;
+  }
+  
   .carousel-track img {
-    height: 2rem;
+    height: 25px;
   }
   
   .help-button {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 15px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-text {
-    padding: 1rem;
+    padding: 15px;
   }
   
   .btn-contato {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .carousel-track {
+    gap: 15px;
   }
   
   .help-button span {
     display: none;
+  }
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
