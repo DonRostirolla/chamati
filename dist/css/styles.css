@@ -82,6 +82,10 @@ img {
   display: flex;
   align-items: center;
   padding: 2rem 0;
+  height: calc(100vh - 80px); /* 80px = altura da toolbar */
+  flex-direction: column;
+  justify-content: space-between; /* Distribui o espaço */
+  overflow: hidden; /* Garante que nada ultrapasse */
 }
 
 .hero-banner {
@@ -273,9 +277,7 @@ img {
     flex-direction: column;
     padding: 0 1rem;
     gap: 2rem;
-  }
-  
-  .hero-image-container, 
+  } 
   .hero-text {
     flex: none;
     width: 100%;
