@@ -49,14 +49,6 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* Ajuste do parágrafo */
-.hero-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: var(--white);
-  text-align: justify; /* ou 'left' se preferir */
-}
 
 /* Estilo da toolbar (caso toolbar.html falhe ou use fallback local) */
 .toolbar {
@@ -146,8 +138,7 @@ a {
 }
 
 .logo-carousel {
-  overflow-x: hidden; /* Esconde scroll lateral */
-  overflow-y: auto;   /* Permite scroll vertical */
+  overflow: hidden;
   background: #86cecb;
   padding: 10px 0;
 }
