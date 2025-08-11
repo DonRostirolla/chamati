@@ -172,3 +172,24 @@ a {
     margin-bottom: 30px;
   }
 }
+@media (max-width: 768px) {
+  .carousel-track {
+    gap: 20px; /* Menor espaço entre logos */
+    animation: scroll 25s linear infinite; /* Animação mais lenta */
+  }
+
+  .carousel-track img {
+    height: 40px; /* Menor altura no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-track {
+    gap: 15px;
+    animation: scroll 30s linear infinite;
+  }
+
+  .carousel-track img {
+    height: 30px;
+  }
+}
