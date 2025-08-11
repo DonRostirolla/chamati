@@ -12,12 +12,12 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #137a7f; /* verde petróleo */
+  background-color: var(--toolbar-bg);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px; /* altura fina */
-  min-height: 60px;
+  height: var(--toolbar-height);
+  min-height: var(--toolbar-height);
   z-index: 1000;
   padding: 0;
   margin: 0;
@@ -33,9 +33,8 @@
   padding: 0 1.5rem;
 }
 
-/* Ajuste específico para o ícone do logo (se ele for muito grande/pequeno) */
 .toolbar__logo-icon {
-  width: 46px;  /* Ajuste conforme necessário */
+  width: 46px;
   height: 46px;
   object-fit: contain;
 }
@@ -63,10 +62,8 @@
   border-radius: 8px;
   font-size: 0.95rem;
   transition: background-color 0.3s ease;
-  
-  /* Fixar tamanho igual para todos */
-  width: 140px;   /* largura fixa */
-  height: 48px;   /* altura fixa */
+  width: 140px;
+  height: 48px;
   box-sizing: border-box;
 }
 
@@ -133,11 +130,11 @@
   animation: shine 3s linear infinite;
 }
 
-/* Alternativa mais sóbria */
+/* Botão de contato */
 .btn-contato {
   display: inline-block;
   background-color: #373b3e;
-  color: var(--primary-light); /* Azul claro (#86cecb) */
+  color: var(--primary-light);
   padding: 0.8rem 2rem;
   border-radius: 4px;
   font-weight: 600;
@@ -151,7 +148,7 @@
   background-color: #373b3e;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px #373b3e;
-  border-radius: 0; /* Mantém quadrado no hover */
+  border-radius: 0;
 }
 
 @keyframes shine {
@@ -159,81 +156,48 @@
 }
 
 /* ===== RESPONSIVIDADE ===== */
+
+/* Tablets e celulares grandes */
 @media (max-width: 768px) {
-  :root {
-    --toolbar-height: auto;
-    --icon-size: 1.3rem;
-  }
-  
-  .toolbar__nav {
-    flex-direction: column;
-    padding: 0.5rem;
-  }
-  
-  
   .toolbar__links-container {
-    width: 100%;
-    justify-content: space-around;
-    padding: 0.5rem 0;
+    display: flex;
+    flex-wrap: nowrap; /* Não quebra linha */
+    overflow-x: auto; /* Rolagem horizontal */
+    -webkit-overflow-scrolling: touch; /* Rolagem suave no iOS */
+    scrollbar-width: none; /* Remove barra no Firefox */
+    gap: 0.5rem;
   }
-  
+  .toolbar__links-container::-webkit-scrollbar {
+    display: none; /* Remove barra no Chrome/Safari */
+  }
+
   .toolbar__button {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
-    flex-grow: 1;
+    flex: 0 0 auto; /* Evita esticar */
+    font-size: 0.85rem;
+    padding: 5px 8px;
+    width: auto;
+    min-width: 120px; /* Mantém um tamanho mínimo */
   }
-  
-  .toolbar__button-text {
-    font-size: 0.75rem;
+
+  .toolbar__logo-icon {
+    height: 40px;
   }
-  
-  .nav-button.active::after {
-    height: 2px;
+
+  .toolbar__button i {
+    font-size: 1.2rem;
   }
 }
 
+/* Celulares muito pequenos */
 @media (max-width: 480px) {
   .toolbar__button-text {
     display: none;
   }
-  
+  .toolbar__button {
+    min-width: 60px;
+    justify-content: center;
+  }
   .toolbar__icon {
-    margin-bottom: 0;
     font-size: 1.4rem;
-  }
-}
-/* Toolbar responsiva */
-@media (max-width: 768px) {
-  .toolbar__links-container {
-    display: flex;
-    flex-wrap: wrap; /* permite quebrar para outra linha */
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .toolbar__button {
-    font-size: 0.85rem; /* texto menor */
-    padding: 5px 8px;
-  }
-
-  .toolbar__logo-icon {
-    height: 30px; /* logo menor */
-  }
-
-  .toolbar__button i {
-    font-size: 1.2rem; /* ícones menores */
-  }
-}
-
-@media (max-width: 480px) {
-  .toolbar__links-container {
-    flex-direction: column; /* uma coluna no celular muito pequeno */
-    align-items: center;
-  }
-
-  .toolbar__button {
-    width: 100%;
-    justify-content: center;
   }
 }
