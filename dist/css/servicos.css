@@ -25,10 +25,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, 
-    var(--primary-light), 
-    var(--secondary), 
-    var(--primary-light));
+  background: linear-gradient(90deg, #72d8d3, #e12885, #72d8d3);
   background-size: 200% auto;
   animation: shine 3s linear infinite;
   border-radius: 2px;
@@ -235,15 +232,7 @@
   }
 }
 
-/* ===== ANIMAÇÕES ===== */
-/* @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); } */
-/* } */
-
 .highlight-card {
-  /* animation: pulse 2s infinite ease-in-out; */
   position: relative;
 }
 
@@ -260,7 +249,7 @@
   font-weight: bold;
   box-shadow: var(--shadow-sm);
 }
-/* Estilo para o ícone no botão CTA */
+
 .cta-button .icon {
   margin-left: 0.5rem;
   display: inline-block;
@@ -272,7 +261,6 @@
   to { transform: translateY(-5px); }
 }
 
-/* Melhorias para os textos */
 .service-card p {
   min-height: auto;
   line-height: 1.6;
@@ -284,7 +272,7 @@
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
 }
-/* Estrutura principal */
+
 .services-container {
   max-width: 1200px;
   margin: 6rem auto 3rem;
@@ -302,7 +290,6 @@
   margin-bottom: 1rem;
 }
 
-/* Seção de diferenciais */
 .differentials-section {
   margin: 4rem 0;
 }
@@ -358,7 +345,6 @@
   line-height: 1.6;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .differentials-grid {
     grid-template-columns: 1fr;
@@ -372,9 +358,9 @@
     font-size: 1.75rem;
   }
 }
-/* Seção Público-Alvo */
+
 .target-audience {
-  background: rgba(0, 98, 102, 0.2);
+  background: rgba(19, 122, 127, 0.2);
   border-radius: 16px;
   padding: 3rem;
   margin: 4rem 0;

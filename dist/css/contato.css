@@ -32,10 +32,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, 
-    var(--primary-light), 
-    var(--secondary), 
-    var(--primary-light));
+  background: linear-gradient(90deg, #72d8d3, #e12885, #72d8d3);
   background-size: 200% auto;
   animation: shine 3s linear infinite;
   border-radius: 2px;
@@ -105,15 +102,6 @@
   display: flex;
   justify-content: center;
 }
-
-/* Estilos específicos para ícones */
-/* .fa-whatsapp {
-  color: #25D366; Verde WhatsApp */
-/* }
-
-.fa-envelope {
-  color: #EA4335; Vermelho Gmail */
-/* } */
 
 .contact-details h3 {
   color: var(--white);
