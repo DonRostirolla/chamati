@@ -1,7 +1,7 @@
 /* css/toolbar.css - Versão Otimizada */
 :root {
   --toolbar-height: 60px;
-  --toolbar-bg: #137a7f;
+  --toolbar-bg: #137a7f;      /* Turquesa Escuro */
   --whatsapp-green: #25D366;
   --icon-size: 1.5rem;
   --transition-speed: 0.3s;
