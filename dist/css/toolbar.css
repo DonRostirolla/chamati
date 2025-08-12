@@ -1,7 +1,7 @@
 /* css/toolbar.css - Versão Otimizada */
 :root {
   --toolbar-height: 60px;
-  --toolbar-bg: #137a7f;      /* Turquesa Escuro */
+  --toolbar-bg: #137a7f;
   --whatsapp-green: #25D366;
   --icon-size: 1.5rem;
   --transition-speed: 0.3s;
@@ -161,22 +161,22 @@
 @media (max-width: 768px) {
   .toolbar__links-container {
     display: flex;
-    flex-wrap: nowrap; /* Não quebra linha */
-    overflow-x: auto; /* Rolagem horizontal */
-    -webkit-overflow-scrolling: touch; /* Rolagem suave no iOS */
-    scrollbar-width: none; /* Remove barra no Firefox */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     gap: 0.5rem;
   }
   .toolbar__links-container::-webkit-scrollbar {
-    display: none; /* Remove barra no Chrome/Safari */
+    display: none;
   }
 
   .toolbar__button {
-    flex: 0 0 auto; /* Evita esticar */
+    flex: 0 0 auto;
     font-size: 0.85rem;
     padding: 5px 8px;
     width: auto;
-    min-width: 120px; /* Mantém um tamanho mínimo */
+    min-width: 120px;
   }
 
   .toolbar__logo-icon {
