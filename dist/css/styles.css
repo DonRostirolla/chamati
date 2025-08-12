@@ -1,15 +1,15 @@
 /* ===== VARIÁVEIS E RESET MODERNO ===== */
 :root {
-  --primary: #39c5bb;          /* Turquesa Miku */
-  --primary-dark: #137a7f;     /* Turquesa Escuro */
-  --primary-light: #72d8d3;    /* Turquesa Claro */
-  --secondary: #e12885;        /* Rosa Vibrante */
-  --secondary-dark: #c12271;   /* Rosa mais escuro */
+  --primary: #39c5bb;
+  --primary-dark: #137a7f;
+  --primary-light: #72d8d3;
+  --secondary: #e12885;
+  --secondary-dark: #c12271;
   --white: #ffffff;
-  --gray-100: #e1e6ea;        /* Neutro Claro */
+  --gray-100: #e1e6ea;
   --gray-200: #d1d6da;
   --gray-600: #6c757d;
-  --gray-800: #373b3e;        /* Neutro Escuro */
+  --gray-800: #373b3e;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
   --shadow-lg: 0 10px 25px rgba(0,0,0,0.2);
@@ -32,7 +32,7 @@ body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: var(--gray-800);
-  background-color: var(--primary-dark); /* Turquesa Escuro como fundo */
+  background-color: var(--primary-dark);
   overflow-x: hidden;
 }
 
@@ -80,12 +80,12 @@ img {
 .main-content {
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 160px); /* Ajuste da altura */
+  min-height: calc(100vh - 160px);
   padding: 2rem 0;
-  padding-top: 40px; /* Espaço extra no topo */
+  padding-top: 40px;
   flex-direction: column;
-  justify-content: center; /* Distribui o espaço */
-  overflow: hidden; /* Garante que nada ultrapasse */
+  justify-content: center;
+  overflow: hidden;
   animation: fadeIn 0.8s ease-out forwards;
 }
 
@@ -237,7 +237,7 @@ img {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 1.5rem;
-  background-color: #e12885;
+  background-color: var(--secondary);
   color: var(--white);
   border-radius: 2rem;
   text-decoration: none;
@@ -301,7 +301,6 @@ img {
     display: none;
   }
 }
-
 
 /* Animações adicionais */
 @keyframes fadeIn {
