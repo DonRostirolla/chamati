@@ -1,260 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- 
-    Meta tags essenciais para SEO e configuração inicial
-    - charset: Define a codificação de caracteres como UTF-8
-    - viewport: Configuração responsiva para dispositivos móveis
-  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Título da página (aparece na aba do navegador e resultados de busca) -->
   <title>Serviços - Chama TI</title>
   
-  <!-- 
-    Folhas de estilo
-    - styles.css: Estilos globais e base do projeto
-    - servicos.css: Estilos específicos para esta página
-    Ordem é importante: primeiro o CSS base, depois os específicos
-  -->
   <!-- CSS -->
-  <link rel="stylesheet" href="css/toolbar.css"> <!-- estilos da toolbar -->
-  <link rel="stylesheet" href="css/servicos.css"> <!-- estilos gerais -->
-  <link rel="stylesheet" href="css/home.css">   <!-- estilos da home -->
-  <link rel="stylesheet" href="css/styles.css"> <!-- estilos gerais -->
+  <link rel="stylesheet" href="css/toolbar.css">
+  <link rel="stylesheet" href="css/servicos.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/styles.css">
 
-  
   <!-- Ícones -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-  <!-- Favicon -->
   <link rel="icon" href="assets/TI.png" type="image/png">
-
-  <!-- Font Awesome icones-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Uicons (Flaticon) -->
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css">
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css">
+
+  <style>
+    .service-card p {
+      text-align: justify;
+    }
+    .differential-card p,
+    .audience-card p {
+      text-align: justify;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- 
-    Container para a toolbar (será preenchido via JavaScript)
-    - Posicionamento fixo no topo
-    - Z-index alto para garantir que fique sobre outros elementos
-  -->
   <div id="navbar-container"></div>
 
-  <!-- 
-    Conteúdo principal da página
-    - services-container: Classe container para estilização
-  -->
   <main class="services-container">
-    <!-- Cabeçalho da seção de serviços -->
     <div class="services-header">
-      <!-- Título principal da página -->
       <h1>Nossos Serviços em TI</h1>
-    <!-- 
-      Grade de Serviços
-      - services-grid: Layout responsivo em grid
-    -->
+    </div>
+
     <div class="services-grid">
-    <!-- Serviço em destaque (com classe highlight-card) -->
-    <div class="service-card highlight-card">
-        <div class="service-icon"><i class="fi fi-bs-zoom-in"></i></div> <!-- Ícone ilustrativo -->
-        <h3>Auditoria de Infraestrutura</h3> <!-- Nome do serviço -->
-        <p>Descubra pontos críticos antes que eles virem problemas! Fazemos um diagnóstico completo da sua 
-          infraestrutura de TI e entregamos um relatório claro e detalhado, com um plano de melhorias sob medida para garantir desempenho, 
-          segurança e economia.</p> <!-- Descrição -->
-        <span class="price">Sob Consulta</span> <!-- Preço/condição -->
-    </div>
-    
-    <!-- Card de serviço: Infraestrutura -->
-    <div class="service-card">
+      <div class="service-card highlight-card">
+        <div class="service-icon"><i class="fi fi-bs-zoom-in"></i></div>
+        <h3>Auditoria de Infraestrutura</h3>
+        <p>Descubra pontos críticos antes que eles virem problemas. Realizamos um diagnóstico completo da sua infraestrutura de TI e entregamos um relatório detalhado com um plano de melhorias sob medida, garantindo mais desempenho, segurança e economia.</p>
+        <span class="price">Sob Consulta</span>
+      </div>
+
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-br-cloud-download-alt"></i></div>
-        <h3>Consultoria em Cloud</h3>
-        <p>Maximize o potencial da sua infraestrutura! Realizamos um diagnóstico completo — seja em Cloud ou física — 
-          e entregamos um relatório detalhado com um plano personalizado para migração, otimização e redução de custos.</p>
+        <h3>Consultoria em Cloud para Resultados Reais</h3>
+        <p>Maximize o potencial da sua infraestrutura. Fazemos um diagnóstico completo — seja em Cloud ou física — e entregamos um plano personalizado para migração, otimização e redução de custos, com foco em segurança e performance.</p>
         <span class="price">Sob Consulta</span>
-    </div>
-    
-    <!-- Card de serviço: Monitoramento -->
-    <div class="service-card">
+      </div>
+
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-br-chart-mixed"></i></div>
-        <h3>Monitoramento 24/7</h3>
-        <p>Sua infraestrutura sempre sob vigilância! Acompanhamos seus sistemas em tempo 
-          real com dashboards dinâmicos via Zabbix e Grafana, enviando alertas automáticos para agir antes que qualquer falha afete seu negócio.</p>
-        <span class="price">Sob Consulta</span> <!-- Preço específico -->
-    </div>
-    
-    <!-- Card de serviço: Segurança -->
-    <div class="service-card">
+        <h3>Monitoramento 24/7 Proativo</h3>
+        <p>Sua infraestrutura sempre sob vigilância. Utilizamos Zabbix e Grafana para acompanhar sistemas em tempo real, com alertas automáticos que permitem agir antes que qualquer falha afete seu negócio.</p>
+        <span class="price">Sob Consulta</span>
+      </div>
+
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-bs-lock"></i></div>
-        <h3>Segurança de Rede</h3>
-        <p>Proteja seu negócio contra ameaças digitais! Implementamos firewalls robustos, soluções de prevenção contra invasões e 
-          políticas de segurança personalizadas, garantindo que sua infraestrutura esteja blindada 24 horas por dia.</p>
+        <h3>Segurança de Rede Completa</h3>
+        <p>Proteja seu negócio contra ameaças digitais. Implementamos firewalls robustos, soluções de prevenção contra invasões e políticas de segurança personalizadas, mantendo sua infraestrutura blindada 24 horas por dia.</p>
         <span class="price">Sob Consulta</span>
-    </div>
+      </div>
 
-    <!-- Card de serviço: Telefonia -->
-    <div class="service-card">
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-bs-smartphone"></i></div>
-        <h3>Telefonia IP</h3>
-        <p>Comunique-se com mais eficiência e menos custos! Implantamos sistemas completos em Asterisk, com funcionalidades avançadas, 
-          relatórios de desempenho e integração personalizada para atender às necessidades específicas da sua empresa.</p>
+        <h3>Telefonia IP Personalizada</h3>
+        <p>Comunique-se com mais eficiência e menos custos. Implantamos sistemas completos em Asterisk, com funcionalidades avançadas, relatórios de desempenho e integração adaptada às necessidades da sua empresa.</p>
         <span class="price">Sob Consulta</span>
-    </div>
+      </div>
 
-    <!-- Card de serviço: Treinamentos -->
-    <div class="service-card">
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-br-layer-plus"></i></div>
         <h3>Treinamentos Especializados</h3>
-        <p>Garantimos que sua equipe dê sequência aos projetos sem complicações! Nossos treinamentos incluem uso das ferramentas, 
-          documentação completa e capacitação prática para que sua empresa opere com autonomia. Além disso, oferecemos palestras e 
-          treinamentos avulsos em tecnologia e segurança da informação para todos os níveis, transformando conhecimento em resultados duradouros.</p>
+        <p>Garantimos que sua equipe dê continuidade aos projetos sem complicações. Oferecemos treinamento de uso das ferramentas, documentação completa e capacitação prática. Também realizamos palestras e treinamentos avulsos em tecnologia e segurança da informação para todos os níveis.</p>
         <span class="price">Sob Consulta</span>
-    </div>
+      </div>
 
-    <!-- Card de serviço: WiFi -->
-    <div class="service-card">
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-br-wifi"></i></div>
-        <h3>WiFi Empresarial</h3>
-        <p>Conectividade que sua empresa e eventos merecem! Desenvolvemos projetos de Wi-Fi de alta performance, garantindo estabilidade, 
-          cobertura completa e qualidade de sinal para ambientes corporativos e eventos de grande porte, sem dor de cabeça para sua equipe.</p>
+        <h3>WiFi Empresarial de Alta Performance</h3>
+        <p>Conectividade estável e de qualidade para sua empresa ou evento. Desenvolvemos projetos de Wi-Fi de alta performance, com cobertura completa e sem quedas, garantindo a melhor experiência para usuários e equipes.</p>
         <span class="price">Sob Consulta</span>
-    </div>
+      </div>
 
-    <!-- Card de serviço: Câmeras -->
-    <div class="service-card">
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-br-camera-cctv"></i></div>
         <h3>Sistemas de Câmeras de Segurança</h3>
-        <p>Proteja o que importa! Instalamos e configuramos sistemas de monitoramento visual avançados, oferecendo controle total e segurança 
-          reforçada para sua empresa, com fácil acesso e operação tranquila para sua equipe.</p>
+        <p>Proteja o que importa. Instalamos e configuramos sistemas de monitoramento visual avançados, proporcionando controle total e segurança reforçada, com acesso fácil e operação simples para sua equipe.</p>
         <span class="price">Sob Consulta</span>
-    </div>
+      </div>
 
-        <!-- Card de serviço: Infraestrutura -->
-    <div class="service-card">
+      <div class="service-card">
         <div class="service-icon"><i class="fi fi-br-code-branch"></i></div>
         <h3>Infraestrutura Personalizada</h3>
-        <p>Soluções de TI feitas sob medida para o seu negócio! Desenvolvemos e implementamos infraestrutura completa, com automações inteligentes e 
-          integrações eficientes, garantindo processos mais ágeis, seguros e sem complicações para sua equipe.</p>
+        <p>Soluções de TI feitas sob medida para o seu negócio. Criamos e implementamos infraestrutura completa, com automações inteligentes e integrações eficientes, garantindo mais agilidade, segurança e simplicidade para sua equipe.</p>
         <span class="price">Sob Consulta</span>
+      </div>
     </div>
-</div>
-
-    <!-- 
-      Seção de Chamada para Ação (Call To Action)
-      - cta-section: Área para conversão e contato
-    -->
 
     <div class="cta-section">
       <h2>Precisa de uma solução personalizada?</h2>
-      <p>Nossa equipe está pronta para entender suas necessidades e oferecer a melhor solução em TI</p>
-      
-    <!-- Botão de CTA principal -->
-    <a href="https://wa.me/5545999235688?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20de%20T.I."
-      class="cta-button"
-      target="_blank"
-      rel="noopener noreferrer">
-      <span>Fale com nosso especialista</span>
-      <span class="icon"><i class="fi fi-brands-whatsapp"></i></span>
-    </a>
-
+      <p>Nossa equipe está pronta para entender suas necessidades e oferecer a melhor solução em TI.</p>
+      <a href="https://wa.me/5545999235688?text=Quero%20um%20or%C3%A7amento%20para%20solu%C3%A7%C3%B5es%20de%20TI"
+         class="cta-button"
+         target="_blank"
+         rel="noopener noreferrer">
+         <span>Solicitar proposta agora</span>
+         <span class="icon"><i class="fi fi-brands-whatsapp"></i></span>
+      </a>
     </div>
   </main>
 
-      <!-- 
-      Seção de diferenciais
-      - section: Tag semântica para agrupamento de conteúdo relacionado
-    -->
-    <section class="differentials-section">
-      <h2>Por que escolher a Chama TI?</h2>
-      
-      <!-- Grade de diferenciais em layout grid -->
-      <div class="differentials-grid">
-        <!-- Card de diferencial 1 -->
-        <div class="differential-card">
-          <span class="differential-number">1</span> <!-- Número decorativo -->
-          <h3>Expertise Técnica</h3> <!-- Título do diferencial -->
-          <p>Profissionais certificados em infraestrutura crítica e segurança</p> <!-- Descrição -->
-        </div>
-        
-        <!-- Card de diferencial 2 -->
-        <div class="differential-card">
-          <span class="differential-number">2</span>
-          <h3>Suporte Especializado</h3>
-          <p>Equipe técnica disponível para atendimento rápido</p>
-        </div>
-        
-        <!-- Card de diferencial 3 -->
-        <div class="differential-card">
-          <span class="differential-number">3</span>
-          <h3>Monitoramento 24/7</h3>
-          <p>Soluções proativas que antecipam problemas</p>
-        </div>
-        
-        <!-- Card de diferencial 4 -->
-        <div class="differential-card">
-          <span class="differential-number">4</span>
-          <h3>Soluções Personalizadas</h3>
-          <p>Infraestrutura desenhada para suas necessidades específicas</p>
-        </div>
+  <section class="differentials-section">
+    <h2>Por que escolher a Chama TI?</h2>
+    <div class="differentials-grid">
+      <div class="differential-card">
+        <span class="differential-number">1</span>
+        <h3>Expertise Técnica</h3>
+        <p>Profissionais certificados e experientes em infraestrutura crítica e segurança, prontos para entregar excelência em cada projeto.</p>
       </div>
-    </section>
-
-  <!-- 
-    Seção de Público-Alvo
-    - target-audience: Informações sobre clientes ideais
-  -->
-  <section class="target-audience">
-    <h2>Nosso Público-Alvo</h2>
-    <p>Empresas que buscam infraestrutura de TI confiável e segura</p>
-    
-    <!-- Cards de tipos de público -->
-    <div class="audience-types">
-      <div class="audience-card">
-        <h3>Pequenas e Médias Empresas</h3>
-        <p>Soluções sob medida para empresas em crescimento</p>
+      <div class="differential-card">
+        <span class="differential-number">2</span>
+        <h3>Suporte Especializado</h3>
+        <p>Equipe técnica disponível para atendimento rápido, com tempo de resposta médio de apenas 30 minutos.</p>
       </div>
-      <div class="audience-card">
-        <h3>Grandes Corporações</h3>
-        <p>Infraestrutura escalável para alta demanda</p>
+      <div class="differential-card">
+        <span class="differential-number">3</span>
+        <h3>Monitoramento 24/7</h3>
+        <p>Soluções proativas que antecipam e resolvem problemas antes que afetem suas operações.</p>
+      </div>
+      <div class="differential-card">
+        <span class="differential-number">4</span>
+        <h3>Soluções Personalizadas</h3>
+        <p>Infraestrutura desenvolvida sob medida para atender exatamente às necessidades da sua empresa.</p>
       </div>
     </div>
   </section>
 
-  <!-- 
-    Botão de ajuda flutuante
-    - Posicionamento fixo na tela
-    - Acesso rápido à página de ajuda
-  -->
+  <section class="target-audience">
+    <h2>Nosso Público-Alvo</h2>
+    <p>Atendemos empresas que buscam infraestrutura de TI confiável, segura e adaptada ao seu crescimento.</p>
+    <div class="audience-types">
+      <div class="audience-card">
+        <h3>Pequenas e Médias Empresas</h3>
+        <p>Projetos práticos e econômicos para quem precisa crescer com segurança e estabilidade.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Grandes Corporações</h3>
+        <p>Infraestrutura robusta, escalável e monitorada para atender alta demanda e operações críticas.</p>
+      </div>
+    </div>
+  </section>
+
   <a class="help-button" href="https://chamati.net/contato">
-    <i class="bi bi-question-circle"></i> <!-- Ícone do Bootstrap -->
-    <span>Ajuda</span> <!-- Texto visível -->
+    <i class="bi bi-question-circle"></i>
+    <span>Ajuda</span>
   </a>
 
-  <!-- 
-    Scripts JavaScript
-    - Colocados no final do body para melhor performance
-  -->
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       fetch('toolbar.html')
         .then(response => response.text())
         .then(html => {
           document.getElementById('navbar-container').innerHTML = html;
-
-          // Ativa link ativo
           const currentPage = window.location.pathname.split('/').pop();
           document.querySelectorAll('.nav-button').forEach(link => {
             if (link.getAttribute('href').includes(currentPage)) {
               link.classList.add('active');
             }
           });
-
-          // 🚀 Ajusta o espaço para o conteúdo
           const toolbar = document.querySelector('.toolbar');
           if (toolbar) {
             document.body.style.paddingTop = toolbar.offsetHeight + 'px';
@@ -262,6 +180,6 @@
         })
         .catch(error => console.error('Erro ao carregar toolbar:', error));
     });
-</script>
+  </script>
 </body>
 </html>
