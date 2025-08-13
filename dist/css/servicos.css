@@ -92,7 +92,9 @@
 .service-card p {
   color: var(--gray-600);
   margin-bottom: 1.5rem;
+  line-height: 1.6;
   min-height: 4.5rem;
+  text-align: justify; /* Justificação adicionada */
 }
 
 .price {
@@ -264,6 +266,7 @@
 .service-card p {
   min-height: auto;
   line-height: 1.6;
+  text-align: justify; /* Garantir que todos fiquem justificados */
 }
 
 .cta-section p {
