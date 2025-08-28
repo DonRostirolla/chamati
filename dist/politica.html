@@ -79,4 +79,69 @@
       <h2>6. Compartilhamento</h2>
       <p>Não vendemos dados pessoais. Podemos compartilhar com:</p>
       <ul>
-        <li><strong>Provedores de
+        <li><strong>Provedores de tecnologia</strong> (hospedagem, e-mail, formulários e ferramentas de análise/medição).</li>
+        <li><strong>Plataformas de comunicação</strong> (ex.: WhatsApp) para viabilizar seu contato conosco.</li>
+        <li><strong>Autoridades</strong> quando exigido por lei ou para proteger direitos.</li>
+      </ul>
+    </div>
+
+    <div class="policy-card">
+      <h2>7. Retenção e segurança</h2>
+      <p>Guardamos dados pelo tempo necessário às finalidades mencionadas e para cumprir exigências legais.
+         Adotamos medidas técnicas e organizacionais para proteger os dados contra acesso, alteração ou destruição não autorizados.</p>
+    </div>
+
+    <div class="policy-card">
+      <h2>8. Seus direitos (LGPD)</h2>
+      <ul>
+        <li>Confirmar a existência de tratamento e acessar seus dados.</li>
+        <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
+        <li>Anonimizar, bloquear ou eliminar dados desnecessários, excessivos ou tratados em desconformidade.</li>
+        <li>Portabilidade, quando aplicável.</li>
+        <li>Informações sobre compartilhamento e sobre a possibilidade de não fornecer consentimento.</li>
+        <li>Revogar consentimento e se opor a tratamentos irregulares.</li>
+      </ul>
+      <p>Para exercer seus direitos, contate: <a href="mailto:contato@chamati.net">contato@chamati.net</a> ou o
+         <a href="contato.html">formulário de contato</a>.</p>
+    </div>
+
+    <div class="policy-card">
+      <h2>9. Serviços de terceiros que usamos</h2>
+      <ul>
+        <li><strong>Google</strong> (ex.: Google Ads/gtag) – mensuração e conversões. Consulte as políticas do Google para saber como desativar personalização de anúncios.</li>
+        <li><strong>Hospedagem e e-mail</strong> – processamento técnico e armazenamento seguro.</li>
+        <li><strong>WhatsApp</strong> – canal de atendimento ao cliente.</li>
+      </ul>
+      <p>Esses terceiros podem coletar dados de navegação por cookies e identificadores próprios, conforme as políticas deles.</p>
+    </div>
+
+    <div class="policy-card">
+      <h2>10. Alterações desta política</h2>
+      <p>Podemos atualizar esta Política para refletir mudanças legais ou operacionais. A versão vigente será sempre publicada nesta página,
+         com data de atualização no topo.</p>
+    </div>
+
+    <div class="policy-card">
+      <h2>11. Contato</h2>
+      <p>Dúvidas sobre privacidade? Fale com a gente pelo e-mail <a href="mailto:contato@chamati.net">contato@chamati.net</a>
+         ou pelo <a href="https://wa.me/5545999235688" target="_blank" rel="noopener">WhatsApp</a>.</p>
+    </div>
+  </main>
+
+  <!-- botão flutuante igual ao restante do site -->
+  <a href="https://wa.me/5545999235688" class="help-button" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i><span>Ajuda</span>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('toolbar.html').then(r => r.text()).then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+        document.querySelectorAll('.nav-button').forEach(a=>{
+          if(a.getAttribute('href').includes('politica')) a.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
