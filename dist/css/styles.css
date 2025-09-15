@@ -277,7 +277,7 @@ img {
   .hero-banner {
     flex-direction: column;
     padding: 0 1rem;
-    gap: 2rem;
+    gap: 1rem;
   } 
   .hero-text {
     flex: none;
