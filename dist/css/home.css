@@ -19,13 +19,13 @@ body {
 /* Seção principal com layout flexível */
 .hero-container {
   display: flex;
-  gap: clamp(12px, 2vw, 24px);
+  gap: 8px;
   align-items: center;
 }
 
 /* Imagem lateral esquerda com efeito de fusão */
 .hero-image-container {
-  flex: 0 0 clamp(260px, 32vw, 36%);
+  flex: 0 0 clamp(240px, 28vw, 32%);
   display: flex;
   justify-content: center;
 }
@@ -39,8 +39,8 @@ body {
 /* Container do texto sobre */
 .hero-text {
   flex: 1;
-  max-width: 600px;
-  padding: 30px;
+  max-width: 640px;
+  padding: 16px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
