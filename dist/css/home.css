@@ -19,13 +19,13 @@ body {
 /* Seção principal com layout flexível */
 .hero-container {
   display: flex;
-  gap: 40px;
+  gap: clamp(12px, 2vw, 24px);
   align-items: center;
 }
 
 /* Imagem lateral esquerda com efeito de fusão */
 .hero-image-container {
-  flex: 0 0 45%;
+  flex: 0 0 clamp(260px, 32vw, 36%);
   display: flex;
   justify-content: center;
 }
