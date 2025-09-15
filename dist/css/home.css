@@ -19,7 +19,7 @@ body {
 /* Seção principal com layout flexível */
 .hero-container {
   display: flex;
-  gap: 8px !important;
+  gap: 30px !important;
   align-items: center;
 }
 
