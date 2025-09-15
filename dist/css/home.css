@@ -27,7 +27,7 @@ body {
 .hero-image-container {
   flex: 0 0 clamp(260px, 32vw, 36%);
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .hero-image {
